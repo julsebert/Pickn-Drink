@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.Objects;
 
-public class Main extends Application {
+public class Driver extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
