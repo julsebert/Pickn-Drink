@@ -9,20 +9,10 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.Objects;
 
-public class Driver extends Application {
-
-    @Override
-    public void start(Stage primaryStage) throws Exception{
-        URL fxmlFileUrl = getClass().getClassLoader().getResource("sample.fxml");
-        Parent root = FXMLLoader.load(Objects.requireNonNull(fxmlFileUrl));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
-        primaryStage.show();
-    }
+public class Driver {
 
     public static void main(String[] args) {
 
         //hallo Team! :(
-        launch(args);
     }
 }
