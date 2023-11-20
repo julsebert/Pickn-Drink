@@ -1,9 +1,9 @@
 package mainpackage;
 
-public class Drinks {
+public interface Drink {
 
     // Attribute/ Eigenschaften
-    private String drinkName;
+    String drinkName;
     private int drinkNummer;
 
     private float preis;
