@@ -1,0 +1,13 @@
+package mainpackage;
+
+public enum CocktailType {
+    HIMBEERMOJITO,
+    APEROLSOUR,
+    WHISKEYSOUR,
+    WATERMELONMAN,
+    LONGISLANDICETEA,
+    ESPRESSOMARTINI,
+    JAEGERBOMB,
+    SOMMERSCHORLE
+
+}
