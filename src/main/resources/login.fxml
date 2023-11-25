@@ -3,7 +3,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.image.ImageView?>
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="mainpackage.Controller" alignment="CENTER">
-    <Label text="Hello World"/>
+    <ImageView>
+        <image> <image url=""></image>
+    </ImageView>
+    <Label text="LOGIN"/>
     <Button text="Say Hello" onAction="#hello"/>
 </VBox>

@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -27,11 +28,17 @@ public class Driver extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        URL fxmlFileUrl = getClass().getClassLoader().getResource("sample.fxml");
+        URL fxmlFileUrl = getClass().getClassLoader().getResource("login.fxml");
+        // FXML Datei wird geladen
         Parent root = FXMLLoader.load(Objects.requireNonNull(fxmlFileUrl));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
-        primaryStage.show();
+        primaryStage.setTitle("Pick 'n Drink");
+        primaryStage.setWidth(352);
+        primaryStage.setHeight(680);
+        // Größe der Stage
 
+        //Scene login = new Scene();
+
+        primaryStage.show();
+        // dem User die Stage zeigen
     }
 }
