@@ -35,6 +35,7 @@ public class Driver extends Application{
         primaryStage.setWidth(352);
         primaryStage.setHeight(680);
         // Größe der Stage
+        primaryStage.setScene(new Scene(root, 352,680));
 
         //Scene login = new Scene();
 

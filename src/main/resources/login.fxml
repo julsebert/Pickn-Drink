@@ -2,12 +2,37 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 
 <?import javafx.scene.image.ImageView?>
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="mainpackage.Controller" alignment="CENTER">
-    <ImageView>
-        <image> <image url=""></image>
-    </ImageView>
-    <Label text="LOGIN"/>
-    <Button text="Say Hello" onAction="#hello"/>
-</VBox>
+<?import javafx.scene.text.Font?>
+
+        <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="mainpackage.Controller" alignment="CENTER" spacing="5">
+            <!-- <ImageView>
+                <image>
+                    <Image url="./Logo.png" />
+                </image>
+            </ImageView>
+            -->
+            <Label text="LOGIN" prefHeight="100">
+                <font>
+                    <Font size="30"/>
+                </font>
+            </Label>
+
+            <Region prefHeight="80"/>
+
+            <Label text="Email" prefWidth="220"/>
+            <TextField maxWidth="220"/>
+
+            <Label text="Passwort" prefWidth="220"/>
+            <PasswordField maxWidth="220"/>
+
+            <Region prefHeight="10"/>
+            <Button text="LOGIN" onAction="#changeToDrinks" minWidth="120" minHeight="40"/>
+            <Region prefHeight="80"/>
+            <Label text="NOT SIGNED IN YET?"/>
+            <Button text="REGISTER" onAction="#changeToRegister"/>
+        </VBox>
+
