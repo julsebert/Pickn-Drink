@@ -8,20 +8,17 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.text.Font?>
 
-        <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="mainpackage.Controller" alignment="CENTER" spacing="5">
+        <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="mainpackage.LoginController" alignment="CENTER" spacing="5">
             <!-- <ImageView>
                 <image>
-                    <Image url="./Logo.png" />
+                    <Image url="@Logo.png" />
                 </image>
-            </ImageView>
-            -->
+            </ImageView> -->
             <Label text="LOGIN" prefHeight="100">
                 <font>
                     <Font size="30"/>
                 </font>
             </Label>
-
-            <Region prefHeight="80"/>
 
             <Label text="Email" prefWidth="220"/>
             <TextField maxWidth="220"/>

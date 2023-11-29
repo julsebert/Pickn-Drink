@@ -1,12 +1,9 @@
 package mainpackage;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 
-public class Controller {
+public class LoginController {
 
     /*@FXML
     private ImageView logo1;
