@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Cocktails"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cocktails">
+   <children>
+      <Button layoutX="355.0" layoutY="90.0" mnemonicParsing="false" text="Add" />
+      <Button layoutX="355.0" layoutY="126.0" mnemonicParsing="false" text="Add" />
+      <Button layoutX="355.0" layoutY="160.0" mnemonicParsing="false" text="Add" />
+      <Label layoutX="106.0" layoutY="95.0" text="Himbeer Mojito " />
+      <Button layoutX="355.0" layoutY="196.0" mnemonicParsing="false" text="Add" />
+      <Label layoutX="108.0" layoutY="131.0" text="Aperol Sour " />
+      <Label layoutX="103.0" layoutY="165.0" text="Whiskey Sour" />
+      <Label layoutX="101.0" layoutY="192.0" text="Watermelon Man " />
+      <Label layoutX="95.0" layoutY="221.0" text="Long Island Ice Tea " />
+      <Label layoutX="96.0" layoutY="256.0" text="Espresso Martini" />
+      <Label layoutX="121.0" layoutY="340.0" text="Jäger Bomb " />
+      <Button layoutX="354.0" layoutY="230.0" mnemonicParsing="false" text="Add" />
+      <Button layoutX="355.0" layoutY="264.0" mnemonicParsing="false" text="Add" />
+      <Button layoutX="355.0" layoutY="301.0" mnemonicParsing="false" text="Add" />
+      <Label layoutX="127.0" layoutY="354.0" text="Sommerschorle" />
+      <Button layoutX="355.0" layoutY="336.0" mnemonicParsing="false" text="Add" />
+      <Label layoutX="106.0" layoutY="62.0" text="Cocktails" />
+      <Label layoutX="196.0" layoutY="62.0" text="Shots" />
+      <Label layoutX="252.0" layoutY="62.0" text="Drivers Drinks" />
+   </children>
 </AnchorPane>
