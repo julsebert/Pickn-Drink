@@ -2,34 +2,29 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.text.Font?>
-
-        <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="mainpackage.LoginController" alignment="CENTER" spacing="5">
+<VBox alignment="CENTER" spacing="5" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="mainpackage.LoginController">
             <!-- <ImageView>
                 <image>
                     <Image url="@Logo.png" />
                 </image>
             </ImageView> -->
-            <Label text="LOGIN" prefHeight="100">
+            <Label prefHeight="100" prefWidth="88.0" text="LOGIN">
                 <font>
-                    <Font size="30"/>
+                    <Font size="30" />
                 </font>
             </Label>
 
-            <Label text="Email" prefWidth="220"/>
-            <TextField maxWidth="220"/>
+            <Label prefWidth="220" text="Email" />
+            <TextField maxWidth="220" />
 
-            <Label text="Passwort" prefWidth="220"/>
-            <PasswordField maxWidth="220"/>
+            <Label prefWidth="220" text="Passwort" />
+            <PasswordField maxWidth="220" />
 
-            <Region prefHeight="10"/>
-            <Button text="LOGIN" onAction="#changeToDrinks" minWidth="120" minHeight="40"/>
-            <Region prefHeight="80"/>
-            <Label text="NOT SIGNED IN YET?"/>
-            <Button text="REGISTER" onAction="#changeToRegister"/>
+            <Region prefHeight="10" />
+            <Button minHeight="40" minWidth="120" onAction="#changeToDrinks" text="LOGIN" />
+            <Region prefHeight="80" />
+            <Label text="NOT SIGNED IN YET?" />
+            <Button onAction="#changeToRegister" text="REGISTER" />
         </VBox>
-

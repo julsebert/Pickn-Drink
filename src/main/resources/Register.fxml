@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="486.0" prefWidth="220.0" spacing="5.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.RegisterController">
+<VBox alignment="CENTER"  spacing="5" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.RegisterController">
    <children>
       <Label contentDisplay="CENTER" maxHeight="220.0" prefHeight="75.0" prefWidth="114.0" text="REGISTER" textAlignment="CENTER">
          <font>
