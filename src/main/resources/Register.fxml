@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="486.0" prefWidth="220.0" spacing="5.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.RegisterController">
+   <children>
+      <Label contentDisplay="CENTER" maxHeight="220.0" prefHeight="75.0" prefWidth="114.0" text="REGISTER" textAlignment="CENTER">
+         <font>
+            <Font size="27.0" />
+         </font></Label>
+      <Label prefWidth="220.0" text="E-MAIL" />
+      <TextField maxWidth="220.0" />
+      <Label prefWidth="220.0" text="BIRTHDATE" />
+      <TextField maxWidth="220.0" />
+      <Label prefWidth="220.0" text="PASSWORD" />
+      <TextField maxWidth="220.0" />
+      <Label prefWidth="220.0" text="REPEAT PASSWORD" />
+      <TextField maxWidth="220.0" />
+      <Region prefHeight="10" />
+      <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="80.0" text="REGISTER" />
+      <Region prefHeight="10" />
+      <Label prefHeight="26.0" prefWidth="115.0" text="ALREADY SIGNED IN?" />
+      <Button mnemonicParsing="false" text="SIGN IN" />
+   </children>
+</VBox>
