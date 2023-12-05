@@ -4,13 +4,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" spacing="5" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="mainpackage.LoginController">
+<VBox alignment="CENTER" spacing="5" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.LoginController">
             <!-- <ImageView>
                 <image>
                     <Image url="@Logo.png" />
                 </image>
             </ImageView> -->
-            <Label prefHeight="100" prefWidth="88.0" text="LOGIN">
+            <Label text="LOGIN">
                 <font>
                     <Font size="30" />
                 </font>

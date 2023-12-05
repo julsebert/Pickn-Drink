@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="mainpackage.currentOrderController"
-            prefHeight="400.0" prefWidth="600.0">
 
-</AnchorPane>
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="352.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="BESTELLUNGEN">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <ListView prefHeight="200.0" prefWidth="200.0" />
+      <Button layoutX="10.0" layoutY="10.0" minHeight="40" minWidth="120" mnemonicParsing="false" onAction="#changeToCocktails" text="ZURÜCK ZUR AUSWAHL" />
+   </children>
+</VBox>

@@ -22,6 +22,6 @@
       <Button mnemonicParsing="false" onAction="#changeToLogin" prefHeight="36.0" prefWidth="80.0" text="REGISTER" />
       <Region prefHeight="10" />
       <Label prefHeight="26.0" prefWidth="115.0" text="ALREADY SIGNED IN?" />
-      <Button mnemonicParsing="false" text="SIGN IN" />
+      <Button mnemonicParsing="false" onAction="#changeToLogin" text="SIGN IN" />
    </children>
 </VBox>

@@ -22,7 +22,7 @@ public class LoginController {
     public void changeToDrinks(){
 
         System.out.println("Welcome to Drinks");
-        //SceneSwitcher.getInstance().switchScene(SceneSwitcher.COCKTAILS, "Cocktails"); -> Funktioniert nicht
+        SceneSwitcher.getInstance().switchScene(SceneSwitcher.COCKTAILS, "Cocktails");
 
     }
 

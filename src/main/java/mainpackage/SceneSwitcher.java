@@ -47,7 +47,7 @@ public class SceneSwitcher {
             Parent root = FXMLLoader.load(Objects.requireNonNull(fxmlFileUrl));
             primaryStage.setTitle(windowTitle);
             Scene scene = new Scene(root);
-            // scene.getStylesheets().add(getClass().getClassLoader().getResource("styles.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getClassLoader().getResource("styles.css").toExternalForm());
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException e) {
