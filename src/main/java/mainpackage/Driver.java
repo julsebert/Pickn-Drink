@@ -32,9 +32,12 @@ public class Driver extends Application{
         // FXML Datei wird geladen
         Parent root = FXMLLoader.load(Objects.requireNonNull(fxmlFileUrl));
 
+
+
         Scene login = new Scene(root, 352,680);
         login.getStylesheets().add(getClass().getClassLoader().getResource("styles.css").toExternalForm());
 
+        SceneSwitcher.getInstance().setPrimaryStage(primaryStage);
 
         primaryStage.setScene(login);
         primaryStage.setTitle("Pick 'n Drink");

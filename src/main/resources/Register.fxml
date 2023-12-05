@@ -19,7 +19,7 @@
       <Label prefWidth="220.0" text="REPEAT PASSWORD" />
       <TextField maxWidth="220.0" />
       <Region prefHeight="10" />
-      <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="80.0" text="REGISTER" />
+      <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="80.0" text="REGISTER" onAction="#changeToLogin"/>
       <Region prefHeight="10" />
       <Label prefHeight="26.0" prefWidth="115.0" text="ALREADY SIGNED IN?" />
       <Button mnemonicParsing="false" text="SIGN IN" />

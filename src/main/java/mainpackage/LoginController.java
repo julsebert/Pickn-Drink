@@ -1,5 +1,6 @@
 package mainpackage;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 
@@ -19,11 +20,16 @@ public class LoginController {
 
     @FXML
     public void changeToDrinks(){
+
         System.out.println("Welcome to Drinks");
+        //SceneSwitcher.getInstance().switchScene(SceneSwitcher.COCKTAILS, "Cocktails");
+        SceneSwitcher.getInstance().switchScene(SceneSwitcher.REGISTER, "Register");
     }
 
     @FXML
-    public void changeToRegister(){
+    public void changeToRegister(ActionEvent event){
+
         System.out.println("Now you can sign in");
+        SceneSwitcher.getInstance().switchScene(SceneSwitcher.REGISTER, "Register");
     }
 }
