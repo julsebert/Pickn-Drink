@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 
-public class LoginController {
+public class ControllerLogin {
 
     /*@FXML
     private ImageView logo1;

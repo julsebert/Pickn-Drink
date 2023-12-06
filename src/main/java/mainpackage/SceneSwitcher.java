@@ -15,7 +15,7 @@ public class SceneSwitcher {
 
     public static final String LOGIN = "login.fxml";
     public static final String REGISTER = "Register.fxml";
-    public static final String COCKTAILS = "cocktails.fxml";
+    public static final String COCKTAILS = "drinks.fxml";
     public static final String SHOTS = "shots.fxml";
     public static final String BASKET = "basket.fxml";
     public static final String CURRENT_ORDER = "currentOrder.fxml";

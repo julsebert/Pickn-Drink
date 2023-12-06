@@ -2,7 +2,7 @@ package mainpackage;
 
 import javafx.fxml.FXML;
 
-public class basketController {
+public class ControllerBasket {
 
     @FXML
     public void changeToPayment () {

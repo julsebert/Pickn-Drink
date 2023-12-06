@@ -2,7 +2,7 @@ package mainpackage;
 
 import javafx.fxml.FXML;
 
-public class currentOrderController {
+public class ControllerCurrentOrder {
 
     @FXML
     public void changeToCocktails() {

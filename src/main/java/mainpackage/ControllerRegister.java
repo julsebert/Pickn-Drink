@@ -1,6 +1,6 @@
 package mainpackage;
 import javafx.fxml.FXML;
-public class RegisterController {
+public class ControllerRegister {
 
     @FXML
     public void changeToLogin (){
