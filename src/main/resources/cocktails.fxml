@@ -3,26 +3,121 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.CocktailsController">
+<AnchorPane prefHeight="680.0" prefWidth="352.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.CocktailsController">
    <children>
-      <Button layoutX="355.0" layoutY="90.0" mnemonicParsing="false" text="Add" />
-      <Button layoutX="355.0" layoutY="126.0" mnemonicParsing="false" text="Add" />
-      <Button layoutX="355.0" layoutY="160.0" mnemonicParsing="false" text="Add" />
-      <Label layoutX="106.0" layoutY="95.0" text="Himbeer Mojito " />
-      <Button layoutX="355.0" layoutY="196.0" mnemonicParsing="false" text="Add" />
-      <Label layoutX="108.0" layoutY="131.0" text="Aperol Sour " />
-      <Label layoutX="103.0" layoutY="165.0" text="Whiskey Sour" />
-      <Label layoutX="101.0" layoutY="192.0" text="Watermelon Man " />
-      <Label layoutX="95.0" layoutY="221.0" text="Long Island Ice Tea " />
-      <Label layoutX="96.0" layoutY="256.0" text="Espresso Martini" />
-      <Label layoutX="121.0" layoutY="340.0" text="Jäger Bomb " />
-      <Button layoutX="354.0" layoutY="230.0" mnemonicParsing="false" text="Add" />
-      <Button layoutX="355.0" layoutY="264.0" mnemonicParsing="false" text="Add" />
-      <Button layoutX="355.0" layoutY="301.0" mnemonicParsing="false" text="Add" />
-      <Label layoutX="127.0" layoutY="354.0" text="Sommerschorle" />
-      <Button layoutX="355.0" layoutY="336.0" mnemonicParsing="false" text="Add" />
-      <Label layoutX="106.0" layoutY="62.0" text="Cocktails" />
-      <Label layoutX="196.0" layoutY="62.0" text="Shots" />
-      <Label layoutX="252.0" layoutY="62.0" text="Drivers Drinks" />
+       <BorderPane>
+           <top>
+               <Region prefHeight="120" />
+           </top>
+           <center>
+              <TabPane layoutX="82.0" layoutY="52.0" prefHeight="318.0" prefWidth="335.0" tabClosingPolicy="UNAVAILABLE">
+                <tabs>
+                  <Tab text="Cocktails" >
+                      <content>
+                          <BorderPane>
+                              <center>
+                                  <VBox>
+                                      <Region prefHeight="40" />
+                                    <Label layoutX="106.0" layoutY="95.0" text="Himbeer Mojito " />
+                                      <Region prefHeight="40" />
+                                    <Label layoutX="106.0" layoutY="131.0" text="Aperol Sour " />
+                                      <Region prefHeight="40" />
+                                    <Label layoutX="106.0" layoutY="165.0" text="Whiskey Sour" />
+                                      <Region prefHeight="40" />
+                                    <Label layoutX="106.0" layoutY="201.0" text="Watermelon Man " />
+                                      <Region prefHeight="40" />
+                                    <Label layoutX="106.0" layoutY="235.0" text="Long Island Ice Tea " />
+                                      <Region prefHeight="40" />
+                                    <Label layoutX="106.0" layoutY="269.0" text="Espresso Martini" />
+                                      <Region prefHeight="40" />
+                                    <Label layoutX="106.0" layoutY="306.0" text="Jäger Bomb " />
+                                      <Region prefHeight="40" />
+                                    <Label layoutX="106.0" layoutY="341.0" text="Sommerschorle" />
+                                  </VBox>
+                              </center>
+                              <right>
+                                  <VBox>
+                                      <Region prefHeight="20" />
+                                    <Button layoutX="355.0" layoutY="90.0" mnemonicParsing="false" text="Add" />
+                                      <Region prefHeight="20" />
+                                    <Button layoutX="355.0" layoutY="126.0" mnemonicParsing="false" text="Add" />
+                                      <Region prefHeight="20" />
+                                    <Button layoutX="355.0" layoutY="160.0" mnemonicParsing="false" text="Add" />
+                                      <Region prefHeight="20" />
+                                    <Button layoutX="355.0" layoutY="196.0" mnemonicParsing="false" text="Add" />
+                                      <Region prefHeight="20" />
+                                    <Button layoutX="355.0" layoutY="230.0" mnemonicParsing="false" text="Add" />
+                                      <Region prefHeight="20" />
+                                    <Button layoutX="355.0" layoutY="264.0" mnemonicParsing="false" text="Add" />
+                                      <Region prefHeight="20" />
+                                    <Button layoutX="355.0" layoutY="301.0" mnemonicParsing="false" text="Add" />
+                                      <Region prefHeight="20" />
+                                    <Button layoutX="355.0" layoutY="336.0" mnemonicParsing="false" text="Add" />
+                                  </VBox>
+                              </right>
+                          </BorderPane>
+                      </content>
+                  </Tab>
+                  <Tab text="Shots" >
+                      <content>
+                          <BorderPane>
+                              <center>
+                                  <VBox>
+                                      <Label layoutX="106.0" layoutY="95.0" text="Tequila" />
+                                      <Label layoutX="106.0" layoutY="131.0" text="Mexikaner" />
+                                      <Label layoutX="106.0" layoutY="165.0" text="Berliner Luft" />
+                                      <Label layoutX="106.0" layoutY="201.0" text="Schüttler" />
+                                      <Label layoutX="106.0" layoutY="235.0" text="Taj Mahal" />
+                                  </VBox>
+                              </center>
+                              <right>
+                                  <VBox>
+                                      <Button layoutX="355.0" layoutY="90.0" mnemonicParsing="false" text="Add" />
+                                      <Button layoutX="355.0" layoutY="126.0" mnemonicParsing="false" text="Add" />
+                                      <Button layoutX="355.0" layoutY="160.0" mnemonicParsing="false" text="Add" />
+                                      <Button layoutX="355.0" layoutY="196.0" mnemonicParsing="false" text="Add" />
+                                      <Button layoutX="355.0" layoutY="230.0" mnemonicParsing="false" text="Add" />
+                                  </VBox>
+                              </right>
+                          </BorderPane>
+                      </content>
+                  </Tab>
+                    <Tab text="Drivers Drinks">
+                        <content>
+                            <BorderPane>
+                                <center>
+                                    <VBox>
+                                        <Label layoutX="106.0" layoutY="95.0" text="Cola" />
+                                        <Label layoutX="106.0" layoutY="131.0" text="Orangensaft" />
+                                        <Label layoutX="106.0" layoutY="165.0" text="Ice Tea" />
+                                        <Label layoutX="106.0" layoutY="201.0" text="Wasser" />
+                                        <Label layoutX="106.0" layoutY="235.0" text="Virgin Mojito" />
+                                    </VBox>
+                                </center>
+                                <right>
+                                    <VBox>
+                                        <Button layoutX="355.0" layoutY="90.0" mnemonicParsing="false" text="Add" />
+                                        <Button layoutX="355.0" layoutY="126.0" mnemonicParsing="false" text="Add" />
+                                        <Button layoutX="355.0" layoutY="160.0" mnemonicParsing="false" text="Add" />
+                                        <Button layoutX="355.0" layoutY="196.0" mnemonicParsing="false" text="Add" />
+                                        <Button layoutX="355.0" layoutY="230.0" mnemonicParsing="false" text="Add" />
+                                    </VBox>
+                                </right>
+                            </BorderPane>
+                        </content>
+                    </Tab>
+                </tabs>
+              </TabPane>
+           </center>
+           <left>
+               <Region prefWidth="40" />
+           </left>
+           <right>
+               <Region prefWidth="40" />
+           </right>
+           <bottom>
+
+           </bottom>
+       </BorderPane>
    </children>
 </AnchorPane>
