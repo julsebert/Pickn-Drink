@@ -1,6 +1,6 @@
 package mainpackage;
 
-public interface IDrink {
+public interface IDrinks {
 
     // Attribute/ Eigenschaften
    /* String drinkName;

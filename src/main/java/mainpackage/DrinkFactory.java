@@ -7,60 +7,31 @@ public class DrinkFactory {
 
     private static Logger logger = LogManager.getLogger(Driver.class);
 
-    public static Cocktails pickCocktail(CocktailType type){
+    public static Drinks createDrink(String name ){
 
-        switch(type){
+        switch(name){
 
-            case HIMBEERMOJITO: logger.info("Creating " + CocktailType.HIMBEERMOJITO + " instance");
-                return new Cocktails();
-            case APEROLSOUR: logger.info("Creating " + CocktailType.APEROLSOUR + " instance");
-                return new Cocktails();
-            case WHISKEYSOUR:  logger.info("Creating " + CocktailType.WHISKEYSOUR + " instance");
-                return new Cocktails();
-            case WATERMELONMAN: logger.info("Creating " + CocktailType.WATERMELONMAN + " instance");
-                return new Cocktails();
-            case LONGISLANDICETEA: logger.info("Creating " + CocktailType.LONGISLANDICETEA + " instance");
-                return new Cocktails();
-            case ESPRESSOMARTINI: logger.info("Creating " + CocktailType.ESPRESSOMARTINI + " instance");
-                return new Cocktails();
-            case JAEGERBOMB: logger.info("Creating " + CocktailType.JAEGERBOMB + " instance");
-                return new Cocktails();
-            case SOMMERSCHORLE: logger.info("Creating " + CocktailType.SOMMERSCHORLE + " instance");
-                return new Cocktails();
+            case "Himbeermojito" : logger.info("Creating instance");
+                return new Drinks("Himbeermojito", "Himbeere", 8, Category.COCKTAILS);
+            case "Aperol Sour": logger.info("Creating instance");
+                return new Drinks("Aperol Sour", "Säure" , 6, Category.COCKTAILS);
+            case "Whiskey Sour":  logger.info("Creating instance");
+                return new Drinks("Whiskey Sour" , "Säure", 8, Category.COCKTAILS);
+            case "Watermelon Man": logger.info("Creating instance");
+                return new Drinks("Watermelon Man", "Wassermelone", 8, Category.COCKTAILS);
+            case "Long Island IceTea": logger.info("Creating instance");
+                return new Drinks("Long Island IceTea" , "Tee", 10, Category.COCKTAILS);
+            case "Espresso Martini": logger.info("Creating instance");
+                return new Drinks("Espresso Martini", "Espresso und Alkoholll", 10, Category.COCKTAILS);
+            case "Jäger Bomb": logger.info("Creating instance");
+                return new Drinks("Jäger Bomb","Bomben" ,7, Category.COCKTAILS);
+            case "Sommerschorle": logger.info("Creating instance");
+                return new Drinks("Sommerschorle", "was Leon sagt", 4, Category.COCKTAILS);
             default: logger.error("Cocktail doesn't exist, please pick another one!");
                 return null;
 
         }
 
-        /*if (type == CocktailType.HIMBEERMOJITO) {
-            logger.info("Creating " + CocktailType.HIMBEERMOJITO + " instance");
-            return new Cocktails();
-        } else if (type == CocktailType.APEROLSOUR) {
-            logger.info("Creating " + CocktailType.APEROLSOUR + " instance");
-            return new Cocktails();
-        } else if (type == CocktailType.WHISKEYSOUR) {
-            logger.info("Creating " + CocktailType.WHISKEYSOUR + " instance");
-            return new Cocktails();
-        } else if (type == CocktailType.WATERMELONMAN) {
-            logger.info("Creating " + CocktailType.WATERMELONMAN + " instance");
-            return new Cocktails();
-        } else if (type == CocktailType.LONGISLANDICETEA) {
-            logger.info("Creating " + CocktailType.LONGISLANDICETEA + " instance");
-            return new Cocktails();
-        } else if (type == CocktailType.ESPRESSOMARTINI) {
-            logger.info("Creating " + CocktailType.ESPRESSOMARTINI + " instance");
-            return new Cocktails();
-        } else if (type == CocktailType.JAEGERBOMB) {
-            logger.info("Creating " + CocktailType.JAEGERBOMB + " instance");
-            return new Cocktails();
-        } else if (type == CocktailType.SOMMERSCHORLE) {
-            logger.info("Creating " + CocktailType.SOMMERSCHORLE + " instance");
-            return new Cocktails();
-        }
-        logger.error("Cocktail doesn't exist, please pick another one!");
-        return null;
-
-         */
 
 
     }
