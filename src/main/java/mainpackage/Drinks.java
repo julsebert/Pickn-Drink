@@ -14,4 +14,8 @@ public class Drinks {
         this.description = description;
 
     }
+
+    public double getPrice(){       //darf die public sein??
+        return price;
+    }
 }

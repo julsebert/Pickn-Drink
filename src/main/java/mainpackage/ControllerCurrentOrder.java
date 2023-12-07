@@ -5,8 +5,8 @@ import javafx.fxml.FXML;
 public class ControllerCurrentOrder {
 
     @FXML
-    public void changeToCocktails() {
+    public void changeToDrinks() {
         System.out.println("You can add more Items");
-        SceneSwitcher.getInstance().switchScene(SceneSwitcher.COCKTAILS, "Cocktails");
+        SceneSwitcher.getInstance().switchScene(SceneSwitcher.DRINKS, "Drinks");
     }
 }

@@ -13,6 +13,6 @@ public class ControllerBasket {
     @FXML
     public void changeToCocktails () {
         System.out.println("You can add more Items");
-        SceneSwitcher.getInstance().switchScene(SceneSwitcher.COCKTAILS, "Cocktails");
+        SceneSwitcher.getInstance().switchScene(SceneSwitcher.DRINKS, "Drinks");
     }
 }

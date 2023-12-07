@@ -5,19 +5,20 @@
 
 <AnchorPane prefHeight="680.0" prefWidth="352.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.ControllerDrinks">
    <children>
-       <BorderPane>
+       <BorderPane AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
            <top>
                <Region prefHeight="120" />
            </top>
            <center>
               <TabPane layoutX="82.0" layoutY="52.0" prefHeight="318.0" prefWidth="335.0" tabClosingPolicy="UNAVAILABLE">
                 <tabs>
-                  <Tab text="Cocktails" >
+                  <Tab text="Cocktails">
                       <content>
                           <BorderPane>
                               <center>
                                   <VBox>
-                                      <Region prefHeight="40" />
+                                      <ListView prefHeight="411.0" prefWidth="192.0" />
+                                    <!--  <Region prefHeight="40" />
                                     <Label layoutX="106.0" layoutY="95.0" text="Himbeer Mojito " />
                                       <Region prefHeight="40" />
                                     <Label layoutX="106.0" layoutY="131.0" text="Aperol Sour " />
@@ -32,12 +33,12 @@
                                       <Region prefHeight="40" />
                                     <Label layoutX="106.0" layoutY="306.0" text="Jäger Bomb " />
                                       <Region prefHeight="40" />
-                                    <Label layoutX="106.0" layoutY="341.0" text="Sommerschorle" />
+                                    <Label layoutX="106.0" layoutY="341.0" text="Sommerschorle" />-->
                                   </VBox>
                               </center>
                               <right>
                                   <VBox>
-                                      <Region prefHeight="20" />
+                                     <!-- <Region prefHeight="20" />
                                     <Button layoutX="355.0" layoutY="90.0" mnemonicParsing="false" text="Add" />
                                       <Region prefHeight="20" />
                                     <Button layoutX="355.0" layoutY="126.0" mnemonicParsing="false" text="Add" />
@@ -52,31 +53,32 @@
                                       <Region prefHeight="20" />
                                     <Button layoutX="355.0" layoutY="301.0" mnemonicParsing="false" text="Add" />
                                       <Region prefHeight="20" />
-                                    <Button layoutX="355.0" layoutY="336.0" mnemonicParsing="false" text="Add" />
+                                    <Button layoutX="355.0" layoutY="336.0" mnemonicParsing="false" text="Add" />-->
                                   </VBox>
                               </right>
                           </BorderPane>
                       </content>
                   </Tab>
-                  <Tab text="Shots" >
+                  <Tab text="Shots">
                       <content>
                           <BorderPane>
                               <center>
                                   <VBox>
-                                      <Label layoutX="106.0" layoutY="95.0" text="Tequila" />
+                                      <ListView prefHeight="402.0" prefWidth="192.0" />
+                                      <!--<Label layoutX="106.0" layoutY="95.0" text="Tequila" />
                                       <Label layoutX="106.0" layoutY="131.0" text="Mexikaner" />
                                       <Label layoutX="106.0" layoutY="165.0" text="Berliner Luft" />
                                       <Label layoutX="106.0" layoutY="201.0" text="Schüttler" />
-                                      <Label layoutX="106.0" layoutY="235.0" text="Taj Mahal" />
+                                      <Label layoutX="106.0" layoutY="235.0" text="Taj Mahal" />-->
                                   </VBox>
                               </center>
                               <right>
                                   <VBox>
-                                      <Button layoutX="355.0" layoutY="90.0" mnemonicParsing="false" text="Add" />
+                                      <!--<Button layoutX="355.0" layoutY="90.0" mnemonicParsing="false" text="Add" />
                                       <Button layoutX="355.0" layoutY="126.0" mnemonicParsing="false" text="Add" />
                                       <Button layoutX="355.0" layoutY="160.0" mnemonicParsing="false" text="Add" />
                                       <Button layoutX="355.0" layoutY="196.0" mnemonicParsing="false" text="Add" />
-                                      <Button layoutX="355.0" layoutY="230.0" mnemonicParsing="false" text="Add" />
+                                      <Button layoutX="355.0" layoutY="230.0" mnemonicParsing="false" text="Add" />-->
                                   </VBox>
                               </right>
                           </BorderPane>
@@ -87,20 +89,21 @@
                             <BorderPane>
                                 <center>
                                     <VBox>
-                                        <Label layoutX="106.0" layoutY="95.0" text="Cola" />
+                                        <ListView prefHeight="422.0" prefWidth="192.0" />
+                                        <!--<Label layoutX="106.0" layoutY="95.0" text="Cola" />
                                         <Label layoutX="106.0" layoutY="131.0" text="Orangensaft" />
                                         <Label layoutX="106.0" layoutY="165.0" text="Ice Tea" />
                                         <Label layoutX="106.0" layoutY="201.0" text="Wasser" />
-                                        <Label layoutX="106.0" layoutY="235.0" text="Virgin Mojito" />
+                                        <Label layoutX="106.0" layoutY="235.0" text="Virgin Mojito" />-->
                                     </VBox>
                                 </center>
                                 <right>
                                     <VBox>
-                                        <Button layoutX="355.0" layoutY="90.0" mnemonicParsing="false" text="Add" />
+                                        <!--<Button layoutX="355.0" layoutY="90.0" mnemonicParsing="false" text="Add" />
                                         <Button layoutX="355.0" layoutY="126.0" mnemonicParsing="false" text="Add" />
                                         <Button layoutX="355.0" layoutY="160.0" mnemonicParsing="false" text="Add" />
                                         <Button layoutX="355.0" layoutY="196.0" mnemonicParsing="false" text="Add" />
-                                        <Button layoutX="355.0" layoutY="230.0" mnemonicParsing="false" text="Add" />
+                                        <Button layoutX="355.0" layoutY="230.0" mnemonicParsing="false" text="Add" />-->
                                     </VBox>
                                 </right>
                             </BorderPane>
@@ -116,6 +119,21 @@
                <Region prefWidth="40" />
            </right>
            <bottom>
+               <HBox alignment="CENTER">
+                   <Button mnemonicParsing="false" onAction="#changeToCurrentOrder" prefHeight="26.0" prefWidth="111.0" text="Current Order" />
+                   <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="111.0" text="Drinks" />
+                   <Button mnemonicParsing="false" onAction="#changeToBasket" prefHeight="26.0" prefWidth="111.0" text="Basket" />
+               </HBox>
+               <!--<MenuBar prefHeight="40.0" prefWidth="415.0">
+                   <menus>
+                       <Menu text="Current Order">
+                       </Menu>
+                       <Menu text="Drinks">
+                       </Menu>
+                       <Menu text="Basket">
+                       </Menu>
+                   </menus>
+               </MenuBar>-->
 
            </bottom>
        </BorderPane>
