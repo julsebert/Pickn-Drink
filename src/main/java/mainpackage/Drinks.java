@@ -16,6 +16,14 @@ public class Drinks {
         this.category = category;
     }
 
+    public String getName(){
+        return name;
+    }
+
+    public Category getCategory(){
+        return category;
+    }
+
     public double getPrice(){       //darf die public sein??
         return price;
     }

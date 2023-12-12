@@ -12,7 +12,11 @@ import java.util.ResourceBundle;
 public class ControllerDrinks implements Initializable {
 
     @FXML
-    private ListView<Drinks> ListCocktails;
+    private ListView<String> ListCocktails;
+    @FXML
+    private ListView<String> ListShots;
+    @FXML
+    private ListView<String> ListDriversDrinks;
     Order order = new Order();
     DrinkFactory drinkFactory = new DrinkFactory();
 
@@ -20,20 +24,16 @@ public class ControllerDrinks implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         drinkFactory.initDrinks(); // muss ich nicht hier eine instanz erstellen
         Collection<Drinks> allDrinks = drinkFactory.getAllDrinks();
-        ListCocktails.getItems().addAll(allDrinks);
+        for (Drinks drink: allDrinks){
+            if (drink.getCategory() == Category.COCKTAILS){
+                ListCocktails.getItems().add(drink.getName());
+            } else if (drink.getCategory() == Category.SHOTS){
+                ListShots.getItems().add(drink.getName());
+            } else {
+                ListDriversDrinks.getItems().add(drink.getName());
+            }
+        }
     }
-
-    // Funktionen
-    @FXML
-    public void ListShots(){
-
-    }
-
-    @FXML
-    public void ListDriversDrinks(){
-
-    }
-
 
     // SceneSwitcher
     @FXML
