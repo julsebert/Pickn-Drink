@@ -3,8 +3,8 @@ package mainpackage;
 public class Drinks {
 
     // Eigenschaften der Klasse Drinks
-    private String name;
-    private String description;
+    private final String name;
+    private final String description;
     private double price;
     private Category category;
 

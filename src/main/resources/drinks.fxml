@@ -13,111 +13,24 @@
               <TabPane layoutX="82.0" layoutY="52.0" prefHeight="318.0" prefWidth="335.0" tabClosingPolicy="UNAVAILABLE">
                 <tabs>
                   <Tab text="Cocktails">
-                      <content>
-                          <BorderPane>
-                              <center>
-                                  <VBox>
-                                      <ListView prefHeight="411.0" prefWidth="192.0" />
-                                    <!--  <Region prefHeight="40" />
-                                    <Label layoutX="106.0" layoutY="95.0" text="Himbeer Mojito " />
-                                      <Region prefHeight="40" />
-                                    <Label layoutX="106.0" layoutY="131.0" text="Aperol Sour " />
-                                      <Region prefHeight="40" />
-                                    <Label layoutX="106.0" layoutY="165.0" text="Whiskey Sour" />
-                                      <Region prefHeight="40" />
-                                    <Label layoutX="106.0" layoutY="201.0" text="Watermelon Man " />
-                                      <Region prefHeight="40" />
-                                    <Label layoutX="106.0" layoutY="235.0" text="Long Island Ice Tea " />
-                                      <Region prefHeight="40" />
-                                    <Label layoutX="106.0" layoutY="269.0" text="Espresso Martini" />
-                                      <Region prefHeight="40" />
-                                    <Label layoutX="106.0" layoutY="306.0" text="Jäger Bomb " />
-                                      <Region prefHeight="40" />
-                                    <Label layoutX="106.0" layoutY="341.0" text="Sommerschorle" />-->
-                                  </VBox>
-                              </center>
-                              <right>
-                                  <VBox>
-                                     <!-- <Region prefHeight="20" />
-                                    <Button layoutX="355.0" layoutY="90.0" mnemonicParsing="false" text="Add" />
-                                      <Region prefHeight="20" />
-                                    <Button layoutX="355.0" layoutY="126.0" mnemonicParsing="false" text="Add" />
-                                      <Region prefHeight="20" />
-                                    <Button layoutX="355.0" layoutY="160.0" mnemonicParsing="false" text="Add" />
-                                      <Region prefHeight="20" />
-                                    <Button layoutX="355.0" layoutY="196.0" mnemonicParsing="false" text="Add" />
-                                      <Region prefHeight="20" />
-                                    <Button layoutX="355.0" layoutY="230.0" mnemonicParsing="false" text="Add" />
-                                      <Region prefHeight="20" />
-                                    <Button layoutX="355.0" layoutY="264.0" mnemonicParsing="false" text="Add" />
-                                      <Region prefHeight="20" />
-                                    <Button layoutX="355.0" layoutY="301.0" mnemonicParsing="false" text="Add" />
-                                      <Region prefHeight="20" />
-                                    <Button layoutX="355.0" layoutY="336.0" mnemonicParsing="false" text="Add" />-->
-                                  </VBox>
-                              </right>
-                          </BorderPane>
-                      </content>
+                          <ListView fx:id="ListCocktails" prefHeight="300" prefWidth="200" />
                   </Tab>
                   <Tab text="Shots">
-                      <content>
-                          <BorderPane>
-                              <center>
-                                  <VBox>
-                                      <ListView prefHeight="402.0" prefWidth="192.0" />
-                                      <!--<Label layoutX="106.0" layoutY="95.0" text="Tequila" />
-                                      <Label layoutX="106.0" layoutY="131.0" text="Mexikaner" />
-                                      <Label layoutX="106.0" layoutY="165.0" text="Berliner Luft" />
-                                      <Label layoutX="106.0" layoutY="201.0" text="Schüttler" />
-                                      <Label layoutX="106.0" layoutY="235.0" text="Taj Mahal" />-->
-                                  </VBox>
-                              </center>
-                              <right>
-                                  <VBox>
-                                      <!--<Button layoutX="355.0" layoutY="90.0" mnemonicParsing="false" text="Add" />
-                                      <Button layoutX="355.0" layoutY="126.0" mnemonicParsing="false" text="Add" />
-                                      <Button layoutX="355.0" layoutY="160.0" mnemonicParsing="false" text="Add" />
-                                      <Button layoutX="355.0" layoutY="196.0" mnemonicParsing="false" text="Add" />
-                                      <Button layoutX="355.0" layoutY="230.0" mnemonicParsing="false" text="Add" />-->
-                                  </VBox>
-                              </right>
-                          </BorderPane>
-                      </content>
+                          <ListView fx:id="ListShots" prefHeight="300" prefWidth="200" />
                   </Tab>
                     <Tab text="Drivers Drinks">
-                        <content>
-                            <BorderPane>
-                                <center>
-                                    <VBox>
-                                        <ListView prefHeight="422.0" prefWidth="192.0" />
-                                        <!--<Label layoutX="106.0" layoutY="95.0" text="Cola" />
-                                        <Label layoutX="106.0" layoutY="131.0" text="Orangensaft" />
-                                        <Label layoutX="106.0" layoutY="165.0" text="Ice Tea" />
-                                        <Label layoutX="106.0" layoutY="201.0" text="Wasser" />
-                                        <Label layoutX="106.0" layoutY="235.0" text="Virgin Mojito" />-->
-                                    </VBox>
-                                </center>
-                                <right>
-                                    <VBox>
-                                        <!--<Button layoutX="355.0" layoutY="90.0" mnemonicParsing="false" text="Add" />
-                                        <Button layoutX="355.0" layoutY="126.0" mnemonicParsing="false" text="Add" />
-                                        <Button layoutX="355.0" layoutY="160.0" mnemonicParsing="false" text="Add" />
-                                        <Button layoutX="355.0" layoutY="196.0" mnemonicParsing="false" text="Add" />
-                                        <Button layoutX="355.0" layoutY="230.0" mnemonicParsing="false" text="Add" />-->
-                                    </VBox>
-                                </right>
-                            </BorderPane>
-                        </content>
+                            <ListView fx:id="ListDriversDrinks" prefHeight="300" prefWidth="200" />
                     </Tab>
                 </tabs>
               </TabPane>
            </center>
-           <left>
+           <!-- <left>
                <Region prefWidth="40" />
            </left>
            <right>
                <Region prefWidth="40" />
            </right>
+           -->
            <bottom>
                <HBox alignment="CENTER">
                    <Button mnemonicParsing="false" onAction="#changeToCurrentOrder" prefHeight="26.0" prefWidth="111.0" text="Current Order" />
