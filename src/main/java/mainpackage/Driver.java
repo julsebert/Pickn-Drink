@@ -14,6 +14,7 @@ import java.util.Objects;
 
 public class Driver extends Application{
     private static Logger logger = LogManager.getLogger(Driver.class);
+    // logger static?
 
 
     public static void main(String[] args) {
@@ -34,14 +35,14 @@ public class Driver extends Application{
 
 
 
-        Scene login = new Scene(root, 352,680);
+        Scene login = new Scene(root, 400,680);
         login.getStylesheets().add(getClass().getClassLoader().getResource("styles.css").toExternalForm());
 
         SceneSwitcher.getInstance().setPrimaryStage(primaryStage);
 
         primaryStage.setScene(login);
         primaryStage.setTitle("Pick 'n Drink");
-        primaryStage.setWidth(352);
+        primaryStage.setWidth(400);
         primaryStage.setHeight(680);
         // Größe der Stage
 

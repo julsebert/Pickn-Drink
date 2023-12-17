@@ -20,4 +20,10 @@
     -fx-alignment: center-right;
 }
 
+#CTableSelect, #DTableSelect, #STableSelect{
+    -fx-alignment: center;
+}
+
+
+
 

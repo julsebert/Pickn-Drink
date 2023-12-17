@@ -9,7 +9,7 @@ public class Drinks {
     private Category category;
 
     // Methoden der Klasse Drinks
-    public Drinks(String name, String description, double price, Category category){
+    public Drinks(String name, String description, double price, Category category) {
         this.name = name;
         this.description = description;
         this.price = price;

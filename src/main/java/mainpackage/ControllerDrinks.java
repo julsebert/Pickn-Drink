@@ -4,10 +4,10 @@ import javafx.beans.Observable;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.net.URL;
 import java.util.Collection;
@@ -15,6 +15,8 @@ import java.util.Map;
 import java.util.ResourceBundle;
 
 public class ControllerDrinks implements Initializable {
+
+    private static Logger logger = LogManager.getLogger(Driver.class);
 
     //FXML für Cocktails
     @FXML
@@ -26,7 +28,26 @@ public class ControllerDrinks implements Initializable {
     @FXML
     private TableColumn<Drinks, Double> CTablePrice;
     @FXML
-    private TableColumn<Drinks, String> CTableButton;
+    private TableColumn<Drinks, Void> CTableSelect;
+
+    // Klasse auslagern!!
+    private class ButtonCell extends TableCell<Drinks, Void> {
+        private final Button addButton = new Button("Add");
+
+        ButtonCell() {
+            addButton.setOnAction(event -> {
+                Drinks drink = getTableView().getItems().get(getIndex());
+                order.addDrink(drink);
+                logger.info("Added " + drink.getName() + " to the order.");
+            });
+        }
+
+        @Override
+        protected void updateItem(Void item, boolean empty) {
+            super.updateItem(item, empty);
+            setGraphic(empty ? null : addButton);
+        }
+    }
 
     //FXML für Shots
     @FXML
@@ -38,7 +59,7 @@ public class ControllerDrinks implements Initializable {
     @FXML
     private TableColumn<Drinks, Double> STablePrice;
     @FXML
-    private TableColumn<Drinks, String> STableButton;
+    private TableColumn<Drinks, Void> STableSelect;
 
     //FXML für DriversDrinks
     @FXML
@@ -50,7 +71,7 @@ public class ControllerDrinks implements Initializable {
     @FXML
     private TableColumn<Drinks, Double> DTablePrice;
     @FXML
-    private TableColumn<Drinks, String> DTableButton;
+    private TableColumn<Drinks, Void> DTableSelect;
     Order order = new Order();
 
     @Override
@@ -69,6 +90,8 @@ public class ControllerDrinks implements Initializable {
                     CTableName.setCellValueFactory(new PropertyValueFactory<>("name"));
                     CTableDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
                     CTablePrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+
+                    CTableSelect.setCellFactory(col -> new ButtonCell());
 
                 } else if (drink.getCategory() == Category.SHOTS) {
 

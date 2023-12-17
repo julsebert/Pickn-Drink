@@ -16,7 +16,7 @@ public class Order {
     }
 
     // Methoden
-    private void addDrink(Drinks drink){
+    public void addDrink(Drinks drink){
         order.add(drink);
     }
 

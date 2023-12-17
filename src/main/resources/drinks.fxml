@@ -1,87 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="680.0" prefWidth="352.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.ControllerDrinks">
+<VBox maxWidth="400.0" prefHeight="680.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.ControllerDrinks">
    <children>
-       <BorderPane AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
-           <top>
-               <Region prefHeight="120" />
-           </top>
-           <center>
-              <TabPane layoutX="82.0" layoutY="52.0" prefHeight="318.0" prefWidth="335.0" tabClosingPolicy="UNAVAILABLE">
-                <tabs>
-                  <Tab text="Cocktails">
-                      <content>
-                        <TableView fx:id="CTableAllDrinks">
-                           <columns>
-                              <TableColumn fx:id="CTableName" prefWidth="75.0" />
-                              <TableColumn fx:id="CTableDescription" prefWidth="75.0" />
-                              <TableColumn fx:id="CTablePrice" prefWidth="75.0" />
-                              <TableColumn fx:id="CTableSelect" prefWidth="75.0" />
-                           </columns>
-                           <columnResizePolicy>
-                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                           </columnResizePolicy></TableView>
-                      </content>
-                  </Tab>
-                  <Tab text="Shots">
-                      <content>
-                          <TableView fx:id="STableAllDrinks">
-                              <columns>
-                                  <TableColumn fx:id="STableName" prefWidth="75.0" />
-                                  <TableColumn fx:id="STableDescription" prefWidth="75.0" />
-                                  <TableColumn fx:id="STablePrice" prefWidth="75.0" />
-                                  <TableColumn fx:id="STableSelect" prefWidth="75.0" />
-                              </columns>
-                              <columnResizePolicy>
-                                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                              </columnResizePolicy></TableView>
-                      </content>
-                  </Tab>
-                    <Tab text="Drivers Drinks">
-                        <content>
-                            <TableView fx:id="DTableAllDrinks">
-                                <columns>
-                                    <TableColumn fx:id="DTableName" prefWidth="75.0" />
-                                    <TableColumn fx:id="DTableDescription" prefWidth="75.0" />
-                                    <TableColumn fx:id="DTablePrice" prefWidth="75.0" />
-                                    <TableColumn fx:id="DTableSelect" prefWidth="75.0" />
-                                </columns>
-                                <columnResizePolicy>
+      <HBox alignment="BOTTOM_CENTER" prefHeight="150.0" prefWidth="200.0">
+               <Label alignment="CENTER" contentDisplay="CENTER" text="MENU" textAlignment="CENTER">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+         <VBox.margin>
+            <Insets bottom="25.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="TOP_CENTER" prefHeight="380.0" prefWidth="200.0">
+         <children>
+      
+             <TabPane maxWidth="312.0" tabClosingPolicy="UNAVAILABLE">
+                      <tabs>
+                        <Tab text="Cocktails">
+                            <content>
+                              <TableView fx:id="CTableAllDrinks">
+                                 <columns>
+                                    <TableColumn fx:id="CTableName" maxWidth="120.0" prefWidth="75.0" text="Cocktail" />
+                                    <TableColumn fx:id="CTableDescription" prefWidth="75.0" text="Ingredients" />
+                                    <TableColumn fx:id="CTablePrice" maxWidth="100.0" prefWidth="75.0" text="Price" />
+                                    <TableColumn fx:id="CTableSelect" prefWidth="75.0" text="Choose" />
+                                 </columns>
+                                 <columnResizePolicy>
                                     <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                                </columnResizePolicy></TableView>
-                        </content>
-                    </Tab>
-                </tabs>
-              </TabPane>
-           </center>
-           <!-- <left>
-               <Region prefWidth="40" />
-           </left>
-           <right>
-               <Region prefWidth="40" />
-           </right>
-           -->
-           <bottom>
-               <HBox alignment="CENTER">
-                   <Button mnemonicParsing="false" onAction="#changeToCurrentOrder" prefHeight="26.0" prefWidth="90.0" text="Current Order" />
-                   <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" text="Drinks" />
-                   <Button mnemonicParsing="false" onAction="#changeToBasket" prefHeight="26.0" prefWidth="90.0" text="Basket" />
-               </HBox>
-               <!--<MenuBar prefHeight="40.0" prefWidth="415.0">
-                   <menus>
-                       <Menu text="Current Order">
-                       </Menu>
-                       <Menu text="Drinks">
-                       </Menu>
-                       <Menu text="Basket">
-                       </Menu>
-                   </menus>
-               </MenuBar>-->
+                                 </columnResizePolicy>
+                        </TableView>
+                            </content>
+                        </Tab>
+                        <Tab text="Shots">
+                            <content>
+                                <TableView fx:id="STableAllDrinks">
+                                    <columns>
+                                        <TableColumn fx:id="STableName" prefWidth="75.0" />
+                                        <TableColumn fx:id="STableDescription" prefWidth="75.0" />
+                                        <TableColumn fx:id="STablePrice" prefWidth="75.0" />
+                                        <TableColumn fx:id="STableSelect" prefWidth="75.0" />
+                                    </columns>
+                                    <columnResizePolicy>
+                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                    </columnResizePolicy>
+                        </TableView>
+                            </content>
+                        </Tab>
+                          <Tab text="Drivers Drinks">
+                              <content>
+                                  <TableView fx:id="DTableAllDrinks">
+                                      <columns>
+                                          <TableColumn fx:id="DTableName" prefWidth="75.0" />
+                                          <TableColumn fx:id="DTableDescription" prefWidth="75.0" />
+                                          <TableColumn fx:id="DTablePrice" prefWidth="75.0" />
+                                          <TableColumn fx:id="DTableSelect" prefWidth="75.0" />
+                                      </columns>
+                                      <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                      </columnResizePolicy>
+                        </TableView>
+                              </content>
+                          </Tab>
+                      </tabs>
+                    </TabPane>
+         </children>
+         <VBox.margin>
+            <Insets bottom="25.0" />
+         </VBox.margin>
+      </HBox>
 
-           </bottom>
-       </BorderPane>
+       <HBox alignment="CENTER">
+                   <Button mnemonicParsing="false" onAction="#changeToCurrentOrder" prefHeight="26.0" prefWidth="90.0" text="Current Order">
+            <HBox.margin>
+               <Insets right="5.0" />
+            </HBox.margin></Button>
+                   <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" text="Drinks" />
+                   <Button mnemonicParsing="false" onAction="#changeToBasket" prefHeight="26.0" prefWidth="90.0" text="Basket">
+            <HBox.margin>
+               <Insets left="5.0" />
+            </HBox.margin></Button>
+       </HBox>
+
    </children>
-</AnchorPane>
+</VBox>
