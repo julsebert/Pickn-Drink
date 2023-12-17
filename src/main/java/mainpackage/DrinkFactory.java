@@ -13,7 +13,7 @@ public class DrinkFactory {
         logger.info("You created the DrinksList");
     }
 
-    private static Logger logger = LogManager.getLogger(Driver.class);
+    private static Logger logger = LogManager.getLogger(DrinkFactory.class);
 
     private static Map<String, Drinks> drinks = new HashMap<>();
     // HashMaps speichern key/value Paare in einer ArrayList

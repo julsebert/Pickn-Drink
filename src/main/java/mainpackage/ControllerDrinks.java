@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 
 public class ControllerDrinks implements Initializable {
 
-    private static Logger logger = LogManager.getLogger(Driver.class);
+    private static Logger logger = LogManager.getLogger(ControllerDrinks.class);
 
     //FXML für Cocktails
     @FXML

@@ -49,6 +49,7 @@ public class SceneSwitcher {
             Scene scene = new Scene(root);
             scene.getStylesheets().add(getClass().getClassLoader().getResource("styles.css").toExternalForm());
             primaryStage.setScene(scene);
+            primaryStage.sizeToScene();
             primaryStage.show();
         } catch (IOException e) {
             throw new RuntimeException("Scene path not found: " + scenePath, e);
