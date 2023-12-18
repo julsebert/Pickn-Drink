@@ -13,7 +13,7 @@ import java.net.URL;
 import java.util.Objects;
 
 public class Driver extends Application{
-    private static Logger logger = LogManager.getLogger(Driver.class);
+    private static final Logger logger = LogManager.getLogger(Driver.class);
     // logger static?
 
 
