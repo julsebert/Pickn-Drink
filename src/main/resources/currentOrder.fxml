@@ -1,17 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.ControllerCurrentOrder">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.ControllerCurrentOrder">
    <children>
-      <Label text="BESTELLUNGEN">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
-      <ListView prefHeight="200.0" prefWidth="200.0" />
-      <Button layoutX="10.0" layoutY="10.0" minHeight="40" minWidth="120" mnemonicParsing="false" onAction="#changeToDrinks" text="ZURÜCK ZUR AUSWAHL" />
+      <HBox alignment="CENTER" minHeight="120.0" prefHeight="120.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Logo.png" />
+               </image>
+            </ImageView>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <TabPane minHeight="500.0" minWidth="360.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                  <Tab text="COCKTAILS">
+                      <content>
+                          <ListView fx:id="currentOrder" prefHeight="100.0" prefWidth="200.0" />
+                      </content>
+                  </Tab>
+                <Tab text="SHOTS" />
+                <Tab text="DRIVERDRINKS">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children></HBox>
    </children>
 </VBox>

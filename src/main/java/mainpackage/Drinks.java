@@ -8,12 +8,15 @@ public class Drinks {
     private double price;
     private Category category;
 
+    private String path;
+
     // Methoden der Klasse Drinks
-    public Drinks(String name, String description, double price, Category category) {
+    public Drinks(String name, String description, double price, Category category, String path) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.category = category;
+        this.path = path;
     }
 
     public String getName(){
@@ -28,6 +31,10 @@ public class Drinks {
 
     public double getPrice(){       //darf die public sein??
         return price;
+    }
+
+    public String getImagePath() {
+        return path;
     }
     // kann eventuell entfernt werden, da wir die HashMap haben
 }

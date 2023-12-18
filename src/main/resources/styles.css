@@ -24,6 +24,14 @@
     -fx-alignment: center;
 }
 
+#drinkItem {
+    -fx-padding: 5; /* Innenabstand für die Versetzung der Border */
+    -fx-border-color: black; /* Farbe der Border */
+    -fx-border-width: 2; /* Breite der Border */
+    -fx-border-radius: 10; /* Eckenradius für die abgerundete Border */
+    -fx-background-radius: 10; /* Hintergrundradius, sollte dem Border-Radius entsprechen */
+}
+
 
 
 
