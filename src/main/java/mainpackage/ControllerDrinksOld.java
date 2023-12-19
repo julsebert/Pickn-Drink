@@ -15,6 +15,8 @@ public class ControllerDrinksOld implements Initializable {
 
     private static Logger logger = LogManager.getLogger(ControllerDrinks.class);
 
+
+
     //FXML für Cocktails
     @FXML
     private TableView<Drinks> CTableAllDrinks;
@@ -28,7 +30,7 @@ public class ControllerDrinksOld implements Initializable {
     private TableColumn<Drinks, Void> CTableSelect;
 
     // Klasse auslagern!!
-    private class ButtonCell extends TableCell<Drinks, Void> {
+    /*private class ButtonCell extends TableCell<Drinks, Void> {
         private final Button addButton = new Button("Add");
 
         ButtonCell() {
@@ -39,12 +41,10 @@ public class ControllerDrinksOld implements Initializable {
             });
         }
 
-        @Override
-        protected void updateItem(Void item, boolean empty) {
-            super.updateItem(item, empty);
-            setGraphic(empty ? null : addButton);
-        }
-    }
+
+
+
+     */
 
     //FXML für Shots
     @FXML
@@ -88,7 +88,7 @@ public class ControllerDrinksOld implements Initializable {
                     CTableDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
                     CTablePrice.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-                    CTableSelect.setCellFactory(col -> new ButtonCell());
+                    //CTableSelect.setCellFactory(col -> new ButtonCell());
 
                 } else if (drink.getCategory() == Category.SHOTS) {
 
@@ -127,6 +127,9 @@ public class ControllerDrinksOld implements Initializable {
         System.out.println("Welcome to Basket");
         SceneSwitcher.getInstance().switchScene(SceneSwitcher.BASKET, "Basket");
     }
+
+
+
 
 
 

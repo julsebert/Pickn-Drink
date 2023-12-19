@@ -6,7 +6,7 @@ import java.util.List;
 public class OrderManager {
 
     // Eigenschaften
-    private final List<Drinks> orderItems = new ArrayList<>();
+    private static final List<Drinks> orderItems = new ArrayList<>(); //static??
     private double finalPrice = 0;
 
     // Methoden
@@ -16,9 +16,9 @@ public class OrderManager {
     public void removeDrink(Drinks drink) {
         orderItems.remove(drink);
     }
-    public List<Drinks> getOrderItems() {
+    public static List<Drinks> getOrderItems() {
         return orderItems;
-    }
+    } // static??
     public void clearOrder() {
         orderItems.clear();
     }

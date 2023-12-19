@@ -22,28 +22,28 @@ public class DrinkFactory {
     public static void initDrinks(){
 
         // Drinks mit der Category: COCKTAILS
-        drinks.put("Himbeermojito", new Drinks("Himbeermojito", "Rum Havana Club, weißer Rohrzucker, Limettensaft, Minze, Himbeeren", 8, Category.COCKTAILS, "/Himbeermojito.png"));
-        drinks.put("Aperol Sour", new Drinks("Aperol Sour", "Aperol, Zitronensaft, Zuckersirup, Orangenspalte" , 6, Category.COCKTAILS, "/AperolSour.png"));
-        drinks.put("Whiskey Sour", new Drinks("Whiskey Sour" , "Bourbon Whiskey, Zitronensaft, Zuckersirup", 8, Category.COCKTAILS, "/WhiskeySour.png"));
-        drinks.put("Watermelon Man", new Drinks("Watermelon Man", "Wassermelonenlikör, Grenadinesirup, Zitronensaft, Orangensaft, Wodka", 8, Category.COCKTAILS, "/WatermelonMan.png"));
-        drinks.put("Long Island IceTea", new Drinks("Long Island IceTea" , "weißer Rum, Orangenlikör, Wodka, Tequila, Gin, Limettensaft, Zuckersirup, Cola", 10, Category.COCKTAILS, "/LongIslandIceTea.png"));
-        drinks.put("Espresso Martini", new Drinks("Espresso Martini", "Gin, Creme de Moka, Espresso", 10, Category.COCKTAILS, "/EspressoMartini.png"));
+        drinks.put("Himbeermojito", new Drinks("Himbeermojito", "Havana Club rum, white cane sugar, lime juice, mint, raspberries", 8, Category.COCKTAILS, "/Himbeermojito.png"));
+        drinks.put("Aperol Sour", new Drinks("Aperol Sour", "Aperol, lemon juice, sugar syrup, orange wedge" , 6, Category.COCKTAILS, "/AperolSour.png"));
+        drinks.put("Whiskey Sour", new Drinks("Whiskey Sour" , "Bourbon whiskey, lemon juice, sugar syrup", 8, Category.COCKTAILS, "/WhiskeySour.png"));
+        drinks.put("Watermelon Man", new Drinks("Watermelon Man", "Watermelon liqueur, grenadine syrup, lemon juice, orange juice, vodka", 8, Category.COCKTAILS, "/WatermelonMan.png"));
+        drinks.put("Long Island IceTea", new Drinks("Long Island IceTea" , "white rum, orange liqueur, vodka, tequila, gin, lime juice, sugar syrup, cola", 10, Category.COCKTAILS, "/LongIslandIceTea.png"));
+        drinks.put("Espresso Martini", new Drinks("Espresso Martini", "Gin, crème de moka, espresso", 10, Category.COCKTAILS, "/EspressoMartini.png"));
         drinks.put("Jäger Bomb", new Drinks("Jäger Bomb","Jägermeister, Energy" ,7, Category.COCKTAILS, "/Jägerbomb.png"));
-        drinks.put("Sommerschorle", new Drinks("Sommerschorle", "Weinschorle, Minze, Holunderblütensirup", 4, Category.COCKTAILS, "/Sommerschorle.png"));
+        drinks.put("Sommerschorle", new Drinks("Sommerschorle", "Wine, soda, mint, lime, elderflower syrup", 4, Category.COCKTAILS, "/Sommerschorle.png"));
 
         // Drinks mit der Category: SHOTS
-        drinks.put("Tequila", new Drinks("Tequila", "Tequila, Zitrone, Salz", 2, Category.SHOTS, "/Tequila.png"));
-        drinks.put("Mexikaner", new Drinks("Mexikaner", "Tomatensaft, Korn, Tabascosauce, Zitronensaft, Salz, Pfeffer", 2, Category.SHOTS, "/Mexi.png"));
+        drinks.put("Tequila", new Drinks("Tequila", "Tequila, lemon, salt", 2, Category.SHOTS, "/Tequila.png"));
+        drinks.put("Mexikaner", new Drinks("Mexikaner", "Tomato juice, corn, Tabasco sauce, lemon juice, salt, pepper", 2, Category.SHOTS, "/Mexi.png"));
         drinks.put("Berliner Luft", new Drinks("Berliner Luft", "Berliner Luft", 2, Category.SHOTS, "/BerlinerLuft.png"));
-        drinks.put("Schüttler", new Drinks("Schüttler", "blue curacao Likör, Zitronensaft", 2, Category.SHOTS, "/Schüttler.png"));
-        drinks.put("Taj Mahal", new Drinks("Taj Mahal", "Bols Likör, Joghurt, Maracujasaft", 2, Category.SHOTS, "/TajMahal.png"));
+        drinks.put("Schüttler", new Drinks("Schüttler", "blue curacao liqueur, lemon juice", 2, Category.SHOTS, "/Schüttler.png"));
+        drinks.put("Taj Mahal", new Drinks("Taj Mahal", "Bols liqueur, yogurt, passion fruit juice", 2, Category.SHOTS, "/TajMahal.png"));
 
         // Drinks mit der Category: DRIVERSDRINK
-        drinks.put("Cola", new Drinks("Cola", "Cola", 4, Category.DRIVERSDRINKS, "/Cola.png"));
-        drinks.put("Orangensaft", new Drinks("Orangensaft", "Orangensaft", 4, Category.DRIVERSDRINKS, "/Orangensaft.png"));
-        drinks.put("Ice Tea", new Drinks("Ice Tea", "Ice Tea", 4, Category.DRIVERSDRINKS, "/Eistee.png"));
-        drinks.put("Wasser", new Drinks("Wasser", "Wasser", 2, Category.DRIVERSDRINKS, "/Wasser.png"));
-        drinks.put("Virgin Mojito", new Drinks("Virgin Mojito", "Limettensaft, Limettenschale, Minze, brauner Zucker, Limettensirup", 5, Category.DRIVERSDRINKS, "/VirginMojito.png"));
+        drinks.put("Cola", new Drinks("Cola", " ", 4, Category.DRIVERSDRINKS, "/Cola.png"));
+        drinks.put("Orangensaft", new Drinks("Orangensaft", " ", 4, Category.DRIVERSDRINKS, "/Orangensaft.png"));
+        drinks.put("Ice Tea", new Drinks("Ice Tea", " ", 4, Category.DRIVERSDRINKS, "/Eistee.png"));
+        drinks.put("Wasser", new Drinks("Wasser", " ", 2, Category.DRIVERSDRINKS, "/Wasser.png"));
+        drinks.put("Virgin Mojito", new Drinks("Virgin Mojito", "Lime juice, lime zest, mint, brown sugar, lime syrup", 5, Category.DRIVERSDRINKS, "/VirginMojito.png"));
 
         logger.info("All drinks have been created.");
     }

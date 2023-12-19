@@ -58,16 +58,17 @@ public class ControllerDrinks implements Initializable{
     }
 
     // SceneSwitcher
-    @FXML
-    public void changeToCurrentOrder(){
-        System.out.println("Welcome to Current Order");
-        SceneSwitcher.getInstance().switchScene(SceneSwitcher.CURRENT_ORDER, "Current Order");
-        logger.info("Welcome to CurrentOrder");
-    }
+
     @FXML
     public void changeToBasket(){
         System.out.println("Welcome to Basket");
         SceneSwitcher.getInstance().switchScene(SceneSwitcher.BASKET, "Basket");
         logger.info("Welcome to Basket");
+    }
+
+    @FXML
+    public void logout(){
+        SceneSwitcher.getInstance().switchScene(SceneSwitcher.LOGIN, "Login");
+        logger.info("You're logged out, welcome to login");
     }
 }

@@ -1,6 +1,11 @@
 .root{
+    -fx-background-color: #BDBCFC;
+}
+
+#backgroundLogin{
     -fx-background-color: #FFF379;
 }
+
 .password-field{
     -fx-background-color: #FFF8AC;
 }
@@ -14,6 +19,8 @@
 
 .button{
     -fx-background-color: #BDBCFC;
+    -fx-background-radius: 25;
+    -fx-text-fill: #6A68D1;
 }
 
 #CTablePrice, #DTablePrice, #STablePrice{
@@ -23,14 +30,16 @@
 #CTableSelect, #DTableSelect, #STableSelect{
     -fx-alignment: center;
 }
+#menuButton1, #menuButton2, #menuButton3{
+    -fx-background-radius: 0;
+    -fx-background-color: #D1D0FD;
 
-#drinkItem {
-    -fx-padding: 5; /* Innenabstand für die Versetzung der Border */
-    -fx-border-color: black; /* Farbe der Border */
-    -fx-border-width: 2; /* Breite der Border */
-    -fx-border-radius: 10; /* Eckenradius für die abgerundete Border */
-    -fx-background-radius: 10; /* Hintergrundradius, sollte dem Border-Radius entsprechen */
 }
+
+#Bezahlen {
+    -fx-background-color: #FFF379;
+}
+
 
 
 

@@ -2,25 +2,49 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="680.0" prefWidth="400.0" spacing="5" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.ControllerBasket">
-   <children>
-      <Label text="WARENKORB" textAlignment="CENTER">
-         <font>
-            <Font size="30.0" />
-         </font></Label>
-      <ListView prefHeight="200.0" prefWidth="200.0" />
+<VBox alignment="TOP_CENTER" prefHeight="680.0" prefWidth="400.0" spacing="5" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.ControllerBasket">
+   <HBox alignment="CENTER" minHeight="120.0" prefHeight="120.0" prefWidth="200.0">
+         <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@Logo.png" />
+            </image>
+         </ImageView>
+      <VBox.margin>
+         <Insets />
+      </VBox.margin>
+   </HBox>
+   <HBox alignment="TOP_CENTER" minHeight="400.0" prefHeight="100.0" prefWidth="200.0">
+      <children>
+            <TableView fx:id="Orderlist" minWidth="360.0" prefHeight="200.0" prefWidth="200.0">
+            <columns>
+               <TableColumn fx:id="count" maxWidth="200.0" minWidth="50.0" prefWidth="75.0" text="count" />
+               <TableColumn fx:id="tableViewDrink" prefWidth="75.0" text="drink" />
+               <TableColumn fx:id="add" maxWidth="200.0" minWidth="50.0" prefWidth="75.0" text="add" />
+               <TableColumn fx:id="remove" maxWidth="200.0" minWidth="50.0" prefWidth="75.0" text="remove" />
+            </columns>
+            <columnResizePolicy>
+               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy></TableView>
+      </children>
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+   </HBox>
       <HBox alignment="CENTER">
-         <children>
-            <Button minHeight="40" minWidth="120" mnemonicParsing="false" onAction="#changeToPayment" text="BEZAHLEN" />
-            <Region prefWidth="30.0" />
-            <Button layoutX="10.0" layoutY="10.0" minHeight="40" minWidth="120" mnemonicParsing="false" onAction="#changeToCocktails" text="ZURÜCK" />
-         </children>
+
+            <Button fx:id="Bezahlen" layoutX="10.0" layoutY="10.0" minHeight="40" minWidth="120" mnemonicParsing="false" onAction="#changeToPayment" text="BEZAHLEN" />
+
          <VBox.margin>
-            <Insets />
+            <Insets top="25.0" />
          </VBox.margin>
       </HBox>
-   </children>
+    <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0">
+        <children>
+            <Button fx:id="menuButton1" mnemonicParsing="false" onAction="#logout" prefHeight="50.0" prefWidth="133.0" text="Logout" />
+            <Button fx:id="menuButton2" mnemonicParsing="false" onAction="#changeToDrinks" prefHeight="50.0" prefWidth="133.0" text="Drinks" />
+            <Button fx:id="menuButton3" mnemonicParsing="false" prefHeight="50.0" prefWidth="133.0" text="Basket" />
+        </children></HBox>
 </VBox>
