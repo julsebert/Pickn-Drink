@@ -49,6 +49,9 @@ public class ControllerBasket implements Initializable {
     @FXML
     private TableColumn<Drinks, Void> remove;
 
+    @FXML
+    private TableColumn<Drinks, String> tableViewPrice;
+
 
     OrderManager orderManager = new OrderManager();
     // Methoden
@@ -65,6 +68,7 @@ public class ControllerBasket implements Initializable {
             tableViewDrink.setCellValueFactory(new PropertyValueFactory<>("name"));
             add.setCellFactory(col -> new addButton());
             remove.setCellFactory(col -> new removeButton());
+            tableViewPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         }
 
 

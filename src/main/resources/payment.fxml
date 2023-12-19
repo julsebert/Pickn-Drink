@@ -10,7 +10,7 @@
 <?import javafx.scene.image.Image?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      alignment="TOP_CENTER" spacing="5" xmlns="http://javafx.com/javafx/17.0.2-ea"
+      alignment="TOP_CENTER" spacing="5"
       fx:controller="mainpackage.ControllerPayment"
       prefHeight="680.0" prefWidth="400.0">
 
