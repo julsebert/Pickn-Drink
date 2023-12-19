@@ -23,6 +23,9 @@ public class DrinkListCell extends ListCell<Drinks> {
     // Logger
     private static final Logger logger = LogManager.getLogger(DrinkListCell.class);
 
+    // Instanz zu OrderManager
+    OrderManager orderManager = new OrderManager();
+
     @Override
     protected void updateItem(Drinks drink, boolean empty) {
         super.updateItem(drink, empty);
@@ -71,9 +74,9 @@ public class DrinkListCell extends ListCell<Drinks> {
         // Button "Add to basket"
         Button addButton = new Button("Add to basket");
         addButton.setOnAction(event -> {
-            //order.addDrink(drink);
-            //System.out.println(order);
-                });
+            orderManager.addDrink(drink);
+            logger.info(drink.getName() + " has been added to the order.");
+        });
 
 
         // Fügen Sie alle Komponenten zur VBox hinzu

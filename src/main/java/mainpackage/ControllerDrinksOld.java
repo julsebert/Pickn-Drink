@@ -1,7 +1,5 @@
 package mainpackage;
 
-import javafx.beans.Observable;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -11,7 +9,6 @@ import org.apache.logging.log4j.Logger;
 
 import java.net.URL;
 import java.util.Collection;
-import java.util.Map;
 import java.util.ResourceBundle;
 
 public class ControllerDrinksOld implements Initializable {
@@ -37,7 +34,7 @@ public class ControllerDrinksOld implements Initializable {
         ButtonCell() {
             addButton.setOnAction(event -> {
                 Drinks drink = getTableView().getItems().get(getIndex());
-                order.addDrink(drink);
+                orderManager.addDrink(drink);
                 logger.info("Added " + drink.getName() + " to the order.");
             });
         }
@@ -72,7 +69,7 @@ public class ControllerDrinksOld implements Initializable {
     private TableColumn<Drinks, Double> DTablePrice;
     @FXML
     private TableColumn<Drinks, Void> DTableSelect;
-    Order order = new Order();
+    OrderManager orderManager = new OrderManager();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
