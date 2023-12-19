@@ -33,6 +33,9 @@ public class ControllerDrinks implements Initializable{
     // Logger
     private static final Logger logger = LogManager.getLogger(ControllerDrinks.class);
 
+    // Order
+    Order order = new Order();
+
     // @FXML
     @FXML
     private ListView<Drinks> listViewCocktails;

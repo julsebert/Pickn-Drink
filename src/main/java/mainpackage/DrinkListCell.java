@@ -16,6 +16,8 @@ import javafx.scene.text.TextFlow;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.ArrayList;
+
 public class DrinkListCell extends ListCell<Drinks> {
 
     // Logger
@@ -68,7 +70,11 @@ public class DrinkListCell extends ListCell<Drinks> {
 
         // Button "Add to basket"
         Button addButton = new Button("Add to basket");
-        // Hier können Sie einen Event-Handler für den Button hinzufügen, falls nötig
+        addButton.setOnAction(event -> {
+            //order.addDrink(drink);
+            //System.out.println(order);
+                });
+
 
         // Fügen Sie alle Komponenten zur VBox hinzu
         vbox.getChildren().addAll(nameLabel, textFlow, priceLabel, addButton);
