@@ -35,7 +35,7 @@ public class Driver extends Application{
 
 
         Scene login = new Scene(root, 400,680);
-        login.getStylesheets().add(getClass().getClassLoader().getResource("styles.css").toExternalForm());
+        login.getStylesheets().add(Objects.requireNonNull(getClass().getClassLoader().getResource("styles.css")).toExternalForm());
 
 
         SceneSwitcher.getInstance().setPrimaryStage(primaryStage);

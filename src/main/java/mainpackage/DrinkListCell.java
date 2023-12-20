@@ -23,7 +23,7 @@ public class DrinkListCell extends ListCell<Drinks> {
     private static final Logger logger = LogManager.getLogger(DrinkListCell.class);
 
     // Instanz zu OrderManager
-    OrderManager orderManager = new OrderManager();
+    OrderManager orderManager = OrderManager.getInstance();
 
     @Override
     protected void updateItem(Drinks drink, boolean empty) {

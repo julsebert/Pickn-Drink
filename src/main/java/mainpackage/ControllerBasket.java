@@ -60,7 +60,7 @@ public class ControllerBasket implements Initializable {
     private Label labelPrice;
 
 
-    OrderManager orderManager = new OrderManager();
+
     // Methoden
 
 
@@ -69,13 +69,13 @@ public class ControllerBasket implements Initializable {
 
         count.setCellValueFactory(cellData -> {
             Drinks drink = cellData.getValue();
-            int drinkCount = orderManager.getCount(drink);
+            int drinkCount = OrderManager.getInstance().getCount(drink);
             return new SimpleObjectProperty<>(drinkCount);
         });
 
         tableViewPrice.setCellValueFactory(cellData -> {
             Drinks drink = cellData.getValue();
-            double drinkPrice = orderManager.getPriceForIdenticalDrinks(drink);
+            double drinkPrice = OrderManager.getInstance().getPriceForIdenticalDrinks(drink);
             return new SimpleObjectProperty<>(drinkPrice);
         });
 
@@ -85,7 +85,7 @@ public class ControllerBasket implements Initializable {
         remove.setCellFactory(col -> new removeButton());
 
 
-        Collection<Drinks> orderedDrinks = OrderManager.getOrderItems();
+        Collection<Drinks> orderedDrinks = OrderManager.getInstance().getOrderItems();
 
         for (Drinks drink : orderedDrinks) {
             if (!isDrinkInTableView(drink)) {
@@ -114,7 +114,7 @@ public class ControllerBasket implements Initializable {
                 Button addButton = new Button("+");
                 addButton.setOnAction(event -> {
                     Drinks drink = getTableView().getItems().get(getIndex());
-                    orderManager.addDrink(drink);
+                    OrderManager.getInstance().addDrink(drink);
                     logger.info("Added " + drink.getName() + " to the order.");
                     updateOrderList();
                     updateTotalPrice();
@@ -137,7 +137,7 @@ public class ControllerBasket implements Initializable {
                 Button removeButton = new Button("-");
                 removeButton.setOnAction(event -> {
                     Drinks drink = getTableView().getItems().get(getIndex());
-                    orderManager.removeDrink(drink);
+                    OrderManager.getInstance().removeDrink(drink);
                     logger.info("Removed " + drink.getName() + " from the order.");
                     updateOrderList();
                     updateTotalPrice();
@@ -159,7 +159,7 @@ public class ControllerBasket implements Initializable {
 
         List<Drinks> drinksToRemove = Orderlist.getItems()
                 .stream()
-                .filter(drink -> orderManager.getCount(drink) == 0)
+                .filter(drink -> OrderManager.getInstance().getCount(drink) == 0)
                 .toList();
 
         Orderlist.getItems().removeAll(drinksToRemove);
@@ -169,8 +169,8 @@ public class ControllerBasket implements Initializable {
     private String calculateTotalPrice() {
         double totalPrice = 0.0;
         for (Drinks drink : Orderlist.getItems()) {
-            double drinkPrice = orderManager.getPriceForIdenticalDrinks(drink);
-            int drinkCount = orderManager.getCount(drink);
+            double drinkPrice = OrderManager.getInstance().getPriceForIdenticalDrinks(drink);
+            int drinkCount = OrderManager.getInstance().getCount(drink);
             totalPrice += drinkPrice * drinkCount;
         }
         return (String.format("%.2f", totalPrice) + " €");
