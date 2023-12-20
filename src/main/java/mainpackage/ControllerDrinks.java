@@ -18,8 +18,6 @@ public class ControllerDrinks implements Initializable{
     // Logger
     private static final Logger logger = LogManager.getLogger(ControllerDrinks.class);
 
-    // Order
-    OrderManager orderManager = new OrderManager();
 
     // @FXML
     @FXML

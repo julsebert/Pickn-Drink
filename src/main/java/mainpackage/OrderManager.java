@@ -7,7 +7,7 @@ public class OrderManager {
 
     // Eigenschaften
     private static final List<Drinks> orderItems = new ArrayList<>(); //static??
-    private double finalPrice = 0;
+
 
     // Methoden
     public void addDrink(Drinks drink) {
@@ -23,16 +23,23 @@ public class OrderManager {
         orderItems.clear();
     }
 
+    // in folgender Methode wird berechnet, wie oft das Getränk bestellt wurde
+    public int getCount(Drinks drink) {
+        int count = 0;
+        for (Drinks item : orderItems) {
+            if (item.equals(drink)) {
+                count++;
+            }
 
-    //jedes Objekt wird gefiltert, bekommt die Variable
-    //drinks (vorübergehend), dann wird für das Objekt der Preis geholt
-    // danach verworfen, geht zum nächsten Objekt
-    private double calculatePrice(){
-        orderItems.stream()
-                .map(Drinks::getPrice)
-                .map(preis -> finalPrice + preis);       // wird direkt auf finalPrice draufgerechnet
+        }
 
-        return finalPrice;
+        return count;
+
+    }
+
+    // Berechnet den Preis für die Anzahl an gleichen Getränken
+    public double getPriceForIdenticalDrinks(Drinks drink){
+        return getCount(drink) * drink.getPrice();
     }
 
 }

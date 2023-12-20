@@ -23,23 +23,22 @@
     -fx-text-fill: #6A68D1;
 }
 
-#CTablePrice, #DTablePrice, #STablePrice{
-    -fx-alignment: center-right;
-}
-
-#CTableSelect, #DTableSelect, #STableSelect{
-    -fx-alignment: center;
-}
 #menuButton1, #menuButton2, #menuButton3{
     -fx-background-radius: 0;
     -fx-background-color: #D1D0FD;
-
 }
 
 #Bezahlen {
     -fx-background-color: #FFF379;
 }
 
+#add, #remove, #count, #tableViewPrice{
+    -fx-alignment: center;
+}
+
+#tableViewDrink{
+    -fx-alignment: center-left;
+}
 
 
 

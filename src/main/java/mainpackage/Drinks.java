@@ -5,10 +5,10 @@ public class Drinks {
     // Eigenschaften der Klasse Drinks
     private final String name;
     private final String description;
-    private double price;
-    private Category category;
+    private final double price;
+    private final Category category;
 
-    private String path;
+    private final String path;
 
     // Methoden der Klasse Drinks
     public Drinks(String name, String description, double price, Category category, String path) {

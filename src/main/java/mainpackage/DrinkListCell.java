@@ -16,7 +16,6 @@ import javafx.scene.text.TextFlow;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
 
 public class DrinkListCell extends ListCell<Drinks> {
 

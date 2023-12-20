@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -38,6 +37,7 @@ public class Driver extends Application{
         Scene login = new Scene(root, 400,680);
         login.getStylesheets().add(getClass().getClassLoader().getResource("styles.css").toExternalForm());
 
+
         SceneSwitcher.getInstance().setPrimaryStage(primaryStage);
 
         primaryStage.setScene(login);
@@ -45,10 +45,6 @@ public class Driver extends Application{
         primaryStage.setWidth(400);
         primaryStage.setHeight(680);
         // Größe der Stage
-
-
-
-        //Scene login = new Scene();
 
         primaryStage.show();
         // dem User die Stage zeigen

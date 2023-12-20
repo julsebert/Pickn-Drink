@@ -13,9 +13,9 @@ public class DrinkFactory {
         logger.info("You created the DrinksList");
     }
 
-    private static Logger logger = LogManager.getLogger(DrinkFactory.class);
+    private static final Logger logger = LogManager.getLogger(DrinkFactory.class);
 
-    private static Map<String, Drinks> drinks = new HashMap<>();
+    private static final Map<String, Drinks> drinks = new HashMap<>();
     // HashMaps speichern key/value Paare in einer ArrayList
     // Hier: key -> Name des Getränks Typ String, value -> drinks-Objekt mit allen Daten
 
@@ -59,7 +59,7 @@ public class DrinkFactory {
             return null; // so o.k?
         }
         // Exception einfügen, falls es das Getränk nicht gibt --> vielleicht hier eigene Exception erstellen
-    };
+    }
 
     public static Collection<Drinks> getAllDrinks () {
         return drinks.values();
