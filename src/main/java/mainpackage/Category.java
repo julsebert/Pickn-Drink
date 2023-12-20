@@ -9,5 +9,5 @@ public enum Category {
 
     SHOTS,
 
-    DRIVERSDRINKS;
+    DRIVERSDRINKS
 }

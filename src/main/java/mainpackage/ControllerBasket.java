@@ -13,7 +13,6 @@ import java.net.URL;
 import java.util.Collection;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.stream.Collectors;
 
 public class ControllerBasket implements Initializable {
 
