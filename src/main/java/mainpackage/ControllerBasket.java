@@ -16,18 +16,37 @@ import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
 public class ControllerBasket implements Initializable {
+
+    // Logger
     private static final Logger logger = LogManager.getLogger(ControllerBasket.class);
 
+    // Verknüpfung zu FXML
+    @FXML
+    private TableView<Drinks> Orderlist;
+    @FXML
+    private TableColumn<Drinks, Integer> count;
+    @FXML
+    private TableColumn<Drinks, String> tableViewDrink;
+    @FXML
+    private TableColumn<Drinks, Void> add;
+    @FXML
+    private TableColumn<Drinks, Void> remove;
+    @FXML
+    private TableColumn<Drinks, Double> tableViewPrice;
+    @FXML
+    private Label labelPrice;
+
+    // SceneSwitcher
     @FXML
     public void changeToPayment () {
-        System.out.println("Now you can pay and set your order");
+        OrderManager.getInstance().clearOrder();
+        // nach dem Bezahlen wird der Warenkorb auf 0 gesetzt
         SceneSwitcher.getInstance().switchScene(SceneSwitcher.PAYMENT, "Payment");
         logger.info("Welcome to Payment");
     }
 
     @FXML
     public void changeToDrinks() {
-        System.out.println("You can add more Items");
         SceneSwitcher.getInstance().switchScene(SceneSwitcher.DRINKS, "Drinks");
         logger.info("Welcome to Drinks");
     }
@@ -38,61 +57,41 @@ public class ControllerBasket implements Initializable {
         logger.info("You're logged out, welcome to Login");
     }
 
-    @FXML
-    private TableView<Drinks> Orderlist;
-
-    @FXML
-    private TableColumn<Drinks, Integer> count;
-
-    @FXML
-    private TableColumn<Drinks, String> tableViewDrink;
-
-    @FXML
-    private TableColumn<Drinks, Void> add;
-
-    @FXML
-    private TableColumn<Drinks, Void> remove;
-
-    @FXML
-    private TableColumn<Drinks, Double> tableViewPrice;
-
-    @FXML
-    private Label labelPrice;
-
-
-
     // Methoden
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        // Spalte 'count'
         count.setCellValueFactory(cellData -> {
             Drinks drink = cellData.getValue();
             int drinkCount = OrderManager.getInstance().getCount(drink);
             return new SimpleObjectProperty<>(drinkCount);
         });
 
+        // Spalte 'price'
         tableViewPrice.setCellValueFactory(cellData -> {
             Drinks drink = cellData.getValue();
             double drinkPrice = OrderManager.getInstance().getPriceForIdenticalDrinks(drink);
             return new SimpleObjectProperty<>(drinkPrice);
         });
 
-
+        // Spalten 'drink', 'add'- und 'remove'-Button
         tableViewDrink.setCellValueFactory(new PropertyValueFactory<>("name"));
         add.setCellFactory(col -> new addButton());
         remove.setCellFactory(col -> new removeButton());
 
-
+        // die Inhalte der Bestellung werden in einer Collection zwischengespeichert
         Collection<Drinks> orderedDrinks = OrderManager.getInstance().getOrderItems();
 
+        // Collection wird auf Object Drinks überprüft
         for (Drinks drink : orderedDrinks) {
             if (!isDrinkInTableView(drink)) {
                 Orderlist.getItems().add(drink);
+                logger.info(drink.getName() + " has been added to the basket.");
             }
         }
 
+        // Gesamtpreis aller Getränke aus der Bestellung wird berechnet
         labelPrice.setText(calculateTotalPrice());
     }
 
@@ -108,6 +107,39 @@ public class ControllerBasket implements Initializable {
         return false;
     }
 
+    // Warenkorb wird aktualisiert
+    private void updateOrderList(){
+        Orderlist.refresh();
+
+        List<Drinks> drinksToRemove = Orderlist.getItems()
+                .stream()
+                .filter(drink -> OrderManager.getInstance().getCount(drink) == 0)
+                .toList();
+
+        Orderlist.getItems().removeAll(drinksToRemove);
+
+        logger.info("The basket has been updated.");
+    }
+
+    // Berechnung Gesamtpreis
+    private String calculateTotalPrice() {
+        double totalPrice = 0.0;
+        for (Drinks drink : Orderlist.getItems()) {
+            double drinkPrice = OrderManager.getInstance().getPriceForIdenticalDrinks(drink);
+            int drinkCount = OrderManager.getInstance().getCount(drink);
+            totalPrice += drinkPrice * drinkCount;
+        }
+        logger.info("The total price has been calculated.");
+        return (String.format("%.2f", totalPrice) + " €");
+    }
+
+    // Gesamtpreis wird aktualisiert
+    private void updateTotalPrice() {
+        labelPrice.setText(calculateTotalPrice());
+        logger.info("The total price has been updated.");
+    }
+
+    // Innere Klassen
     // addButton um weitere Getränke der Bestellung hinzuzufügen
     private class addButton extends TableCell<Drinks, Void> {
         addButton() {
@@ -115,9 +147,10 @@ public class ControllerBasket implements Initializable {
                 addButton.setOnAction(event -> {
                     Drinks drink = getTableView().getItems().get(getIndex());
                     OrderManager.getInstance().addDrink(drink);
-                    logger.info("Added " + drink.getName() + " to the order.");
                     updateOrderList();
                     updateTotalPrice();
+
+                    logger.info("Added " + drink.getName() + " to the order.");
                 });
                 setGraphic(addButton);
         }
@@ -138,9 +171,10 @@ public class ControllerBasket implements Initializable {
                 removeButton.setOnAction(event -> {
                     Drinks drink = getTableView().getItems().get(getIndex());
                     OrderManager.getInstance().removeDrink(drink);
-                    logger.info("Removed " + drink.getName() + " from the order.");
                     updateOrderList();
                     updateTotalPrice();
+
+                    logger.info("Removed " + drink.getName() + " from the order.");
                 });
                 setGraphic(removeButton);
         }
@@ -153,31 +187,4 @@ public class ControllerBasket implements Initializable {
             }
         }
     }
-
-    private void updateOrderList(){
-        Orderlist.refresh();
-
-        List<Drinks> drinksToRemove = Orderlist.getItems()
-                .stream()
-                .filter(drink -> OrderManager.getInstance().getCount(drink) == 0)
-                .toList();
-
-        Orderlist.getItems().removeAll(drinksToRemove);
-    }
-
-    // Berechnung Gesamtpreis
-    private String calculateTotalPrice() {
-        double totalPrice = 0.0;
-        for (Drinks drink : Orderlist.getItems()) {
-            double drinkPrice = OrderManager.getInstance().getPriceForIdenticalDrinks(drink);
-            int drinkCount = OrderManager.getInstance().getCount(drink);
-            totalPrice += drinkPrice * drinkCount;
-        }
-        return (String.format("%.2f", totalPrice) + " €");
-    }
-
-    private void updateTotalPrice() {
-        labelPrice.setText(calculateTotalPrice());
-    }
-
 }

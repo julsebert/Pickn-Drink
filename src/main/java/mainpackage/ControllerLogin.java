@@ -1,20 +1,25 @@
 package mainpackage;
 
 import javafx.fxml.FXML;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class ControllerLogin {
 
+    // Logger
+    private static final Logger logger = LogManager.getLogger(ControllerLogin.class);
+
     // SceneSwitcher
     @FXML
     public void changeToDrinks(){
-        System.out.println("Welcome to Drinks");
         SceneSwitcher.getInstance().switchScene(SceneSwitcher.DRINKS, "Drinks");
+        logger.info("Welcome to Drinks.");
     }
 
     @FXML
     public void changeToRegister(){
-        System.out.println("Now you can sign in");
         SceneSwitcher.getInstance().switchScene(SceneSwitcher.REGISTER, "Register");
+        logger.info("Now you can sign in.");
     }
 }

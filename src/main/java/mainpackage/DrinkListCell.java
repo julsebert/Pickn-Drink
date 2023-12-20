@@ -22,9 +22,9 @@ public class DrinkListCell extends ListCell<Drinks> {
     // Logger
     private static final Logger logger = LogManager.getLogger(DrinkListCell.class);
 
-    // Instanz zu OrderManager
-    OrderManager orderManager = OrderManager.getInstance();
+    // Methoden
 
+    // Wenn eine Drink-Objekt vorhanden ist, dann wird eine passende DrinkPane erstellt
     @Override
     protected void updateItem(Drinks drink, boolean empty) {
         super.updateItem(drink, empty);
@@ -40,7 +40,7 @@ public class DrinkListCell extends ListCell<Drinks> {
         }
     }
 
-    // createDrinkPane(): erstellt eine Pane mit einem bestimmten Layout
+    // createDrinkPane(): erstellt eine Pane mit einem vorgegebenen Layout
     private Pane createDrinkPane(Drinks drink) {
         // Haupt-Pane (HBox) für das Drink-Item
         HBox drinkItem = new HBox(10); // 10 ist der Abstand zwischen den Elementen
@@ -73,7 +73,7 @@ public class DrinkListCell extends ListCell<Drinks> {
         // Button "Add to basket"
         Button addButton = new Button("Add to basket");
         addButton.setOnAction(event -> {
-            orderManager.addDrink(drink);
+            OrderManager.getInstance().addDrink(drink);
             logger.info(drink.getName() + " has been added to the order.");
         });
 

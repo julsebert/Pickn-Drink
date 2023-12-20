@@ -8,17 +8,23 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DrinkFactory {
-    public DrinkFactory(){
-        initDrinks();
-        logger.info("You created the DrinksList");
-    }
 
+    // Logger
     private static final Logger logger = LogManager.getLogger(DrinkFactory.class);
 
     private static final Map<String, Drinks> drinks = new HashMap<>();
     // HashMaps speichern key/value Paare in einer ArrayList
     // Hier: key -> Name des Getränks Typ String, value -> drinks-Objekt mit allen Daten
 
+    // Konstruktor
+    public DrinkFactory(){
+        initDrinks();
+        logger.info("You created the DrinksList");
+    }
+
+    // Methoden
+
+    // Methode initialisiert die einzelnen Getränke. Hier können Getränke zu der Karte hinzugefügt oder weggenommen werden.
     public static void initDrinks(){
 
         // Drinks mit der Category: COCKTAILS
@@ -47,6 +53,13 @@ public class DrinkFactory {
 
         logger.info("All drinks have been created.");
     }
+
+    // Methode dient dazu die Inhalte der HashMap auszugeben
+    public static Collection<Drinks> getAllDrinks () {
+        return drinks.values();
+    }
+
+    // Methode wird hier nicht genutzt, dient aber der Erweiterbarkeit der DrinkFactory
     public static Drinks createDrink(String name){
         try{
             if (name == null || !drinks.containsKey(name)){
@@ -56,15 +69,8 @@ public class DrinkFactory {
         }
         catch (NullPointerException e){
             logger.error("The specified drink is not on the menu.", e);
-            return null; // so o.k?
+            return null;
         }
         // Exception einfügen, falls es das Getränk nicht gibt --> vielleicht hier eigene Exception erstellen
     }
-
-    public static Collection<Drinks> getAllDrinks () {
-        return drinks.values();
-    }
-    // über ID kann dann bei der XML Drinks die Liste aufgeführt werden mit dieser Methode,
-
-
 }

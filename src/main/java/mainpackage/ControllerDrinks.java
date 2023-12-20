@@ -18,8 +18,7 @@ public class ControllerDrinks implements Initializable{
     // Logger
     private static final Logger logger = LogManager.getLogger(ControllerDrinks.class);
 
-
-    // @FXML
+    // Verknüpfung zu FXML
     @FXML
     private ListView<Drinks> listViewCocktails;
     @FXML
@@ -56,10 +55,8 @@ public class ControllerDrinks implements Initializable{
     }
 
     // SceneSwitcher
-
     @FXML
     public void changeToBasket(){
-        System.out.println("Welcome to Basket");
         SceneSwitcher.getInstance().switchScene(SceneSwitcher.BASKET, "Basket");
         logger.info("Welcome to Basket");
     }
