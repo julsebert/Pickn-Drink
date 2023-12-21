@@ -3,7 +3,7 @@ package mainpackage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Drinks {
+public class Drinks implements IDrinks{
 
     // Logger
     private static final Logger logger = LogManager.getLogger(Drinks.class);
@@ -26,19 +26,28 @@ public class Drinks {
         logger.info("The values for the " + name + " have been set.");
     }
 
-    // Methoden der Klasse Drinks
-    public String getName(){ return name; }
+    // Implementierung der Methoden aus dem IDrinks-Interface
+    @Override
+    public String getName() {
+        return name;
+    }
 
-    public String getDescription() { return description; }
+    @Override
+    public String getDescription() {
+        return description;
+    }
 
-    public Category getCategory(){
+    @Override
+    public Category getCategory() {
         return category;
     }
 
-    public double getPrice(){       //darf die public sein??
+    @Override
+    public double getPrice() {
         return price;
     }
 
+    @Override
     public String getImagePath() {
         return path;
     }

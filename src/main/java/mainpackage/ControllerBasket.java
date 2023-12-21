@@ -125,11 +125,10 @@ public class ControllerBasket implements Initializable {
         double totalPrice = 0.0;
         for (Drinks drink : Orderlist.getItems()) {
             double drinkPrice = OrderManager.getInstance().getPriceForIdenticalDrinks(drink);
-            int drinkCount = OrderManager.getInstance().getCount(drink);
-            totalPrice += drinkPrice * drinkCount;
+            totalPrice += drinkPrice;
         }
         logger.info("The total price has been calculated.");
-        return (String.format("%.2f", totalPrice) + " €");
+        return String.format("%.2f €", totalPrice);
     }
 
     // Gesamtpreis wird aktualisiert

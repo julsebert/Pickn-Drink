@@ -51,13 +51,13 @@ public class OrderManager {
                 count++;
             }
         }
-        logger.info("The " + drink + " was counted " + count + " times.");
+        logger.info("The " + drink.getName() + " was counted " + count + " times.");
         return count;
     }
 
     // Berechnet den Preis für die Anzahl an gleichen Getränken
     public double getPriceForIdenticalDrinks(Drinks drink){
-        logger.info("The total price for " + drink + " has been calculated.");
+        logger.info("The total price for " + drink.getName() + " has been calculated.");
         return getCount(drink) * drink.getPrice();
     }
 }

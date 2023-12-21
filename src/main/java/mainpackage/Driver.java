@@ -18,7 +18,6 @@ public class Driver extends Application{
 
     // main-Methode
     public static void main(String[] args) {
-
         try {
             launch(args);
         }catch(Exception e){
