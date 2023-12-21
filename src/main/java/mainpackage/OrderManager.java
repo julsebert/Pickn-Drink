@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class OrderManager {
@@ -12,7 +13,7 @@ public class OrderManager {
     private static final Logger logger = LogManager.getLogger(OrderManager.class);
 
     // Eigenschaften
-    private final List<Drinks> orderItems = new ArrayList<>();
+    private final List<IDrinks> orderItems = new ArrayList<>();
     private static OrderManager instance;
 
     // Konstruktor
@@ -30,23 +31,23 @@ public class OrderManager {
     }
 
     // Methoden
-    public void addDrink(Drinks drink) {
+    public void addDrink(IDrinks drink) {
         orderItems.add(drink);
     }
-    public void removeDrink(Drinks drink) {
+    public void removeDrink(IDrinks drink) {
         orderItems.remove(drink);
     }
-    public List<Drinks> getOrderItems() {
-        return orderItems;
+    public List<IDrinks> getOrderItems() {
+        return new LinkedList<>(orderItems);
     }
     public void clearOrder() {
         orderItems.clear();
     }
 
     // in folgender Methode wird berechnet, wie oft das Getränk bestellt wurde
-    public int getCount(Drinks drink) {
+    public int getCount(IDrinks drink) {
         int count = 0;
-        for (Drinks item : orderItems) {
+        for (IDrinks item : orderItems) {
             if (item.equals(drink)) {
                 count++;
             }
@@ -56,7 +57,7 @@ public class OrderManager {
     }
 
     // Berechnet den Preis für die Anzahl an gleichen Getränken
-    public double getPriceForIdenticalDrinks(Drinks drink){
+    public double getPriceForIdenticalDrinks(IDrinks drink){
         logger.info("The total price for " + drink.getName() + " has been calculated.");
         return getCount(drink) * drink.getPrice();
     }

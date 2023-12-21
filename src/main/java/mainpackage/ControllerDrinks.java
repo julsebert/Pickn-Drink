@@ -22,11 +22,11 @@ public class ControllerDrinks implements Initializable{
 
     // Verknüpfung zu FXML
     @FXML
-    private ListView<Drinks> listViewCocktails;
+    private ListView<IDrinks> listViewCocktails;
     @FXML
-    private ListView<Drinks> listViewShots;
+    private ListView<IDrinks> listViewShots;
     @FXML
-    private ListView<Drinks> listViewDriverDrinks;
+    private ListView<IDrinks> listViewDriverDrinks;
 
     // Methoden
     @Override
@@ -34,36 +34,18 @@ public class ControllerDrinks implements Initializable{
 
         // Getränkeliste erstellen
         DrinkFactory.initDrinks();
-        Collection<Drinks> allDrinks = DrinkFactory.getAllDrinks();
+        Collection<IDrinks> allDrinks = DrinkFactory.getAllDrinks();
 
-        // Getränkeliste in die 3 Kategorien filtern
-        /*ObservableList<Drinks> cocktailsList = FXCollections.observableArrayList(allDrinks
-                .stream().filter(drink -> drink.getCategory() == Category.COCKTAILS).collect(Collectors.toList()));
-        ObservableList<Drinks> shotsList = FXCollections.observableArrayList(allDrinks
-                .stream().filter(drink -> drink.getCategory() == Category.SHOTS).collect(Collectors.toList()));
-        ObservableList<Drinks> driverDrinkList = FXCollections.observableArrayList(allDrinks
-                .stream().filter(drink -> drink.getCategory() == Category.DRIVERSDRINKS).collect(Collectors.toList()));
-        // -> sollen wir hier Threads nutzen
-
-        // Befüllung der einzelnen ListViews mit den jeweiligen Inhalten
-        listViewCocktails.setCellFactory(lv -> new DrinkListCell());
-        listViewCocktails.setItems(cocktailsList);
-        listViewShots.setCellFactory(lv -> new DrinkListCell());
-        listViewShots.setItems(shotsList);
-        listViewDriverDrinks.setCellFactory(lv -> new DrinkListCell());
-        listViewDriverDrinks.setItems(driverDrinkList);
-
-         */
         // Das Filtern nach den einzelnen Kategorien wird in Threads unterteilt
         Thread cocktailsThread = new Thread(() -> {
-            List<Drinks> cocktails = allDrinks
+            List<IDrinks> cocktails = allDrinks
                     .parallelStream()
                     .filter(drink -> drink.getCategory() == Category.COCKTAILS)
                     .collect(Collectors.toList());
 
             // GUI aktualisieren
             Platform.runLater(() -> {
-                ObservableList<Drinks> cocktailsList = FXCollections.observableArrayList(cocktails);
+                ObservableList<IDrinks> cocktailsList = FXCollections.observableArrayList(cocktails);
                 listViewCocktails.setCellFactory(lv -> new DrinkListCell());
                 listViewCocktails.setItems(cocktailsList);
             });
@@ -72,14 +54,14 @@ public class ControllerDrinks implements Initializable{
         });
 
         Thread shotsThread = new Thread(() -> {
-            List<Drinks> shots = allDrinks
+            List<IDrinks> shots = allDrinks
                     .parallelStream()
                     .filter(drink -> drink.getCategory() == Category.SHOTS)
                     .collect(Collectors.toList());
 
             // GUI aktualisieren
             Platform.runLater(() -> {
-                ObservableList<Drinks> shotsList = FXCollections.observableArrayList(shots);
+                ObservableList<IDrinks> shotsList = FXCollections.observableArrayList(shots);
                 listViewShots.setCellFactory(lv -> new DrinkListCell());
                 listViewShots.setItems(shotsList);
             });
@@ -88,14 +70,14 @@ public class ControllerDrinks implements Initializable{
         });
 
         Thread driverDrinksThread = new Thread(() -> {
-            List<Drinks> driverDrinks = allDrinks
+            List<IDrinks> driverDrinks = allDrinks
                     .parallelStream()
                     .filter(drink -> drink.getCategory() == Category.DRIVERSDRINKS)
                     .collect(Collectors.toList());
 
             // GUI aktualisieren
             Platform.runLater(() -> {
-                ObservableList<Drinks> driverDrinkList = FXCollections.observableArrayList(driverDrinks);
+                ObservableList<IDrinks> driverDrinkList = FXCollections.observableArrayList(driverDrinks);
                 listViewDriverDrinks.setCellFactory(lv -> new DrinkListCell());
                 listViewDriverDrinks.setItems(driverDrinkList);
             });

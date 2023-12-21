@@ -17,7 +17,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
-public class DrinkListCell extends ListCell<Drinks> {
+public class DrinkListCell extends ListCell<IDrinks> {
 
     // Logger
     private static final Logger logger = LogManager.getLogger(DrinkListCell.class);
@@ -26,7 +26,7 @@ public class DrinkListCell extends ListCell<Drinks> {
 
     // Wenn eine Drink-Objekt vorhanden ist, dann wird eine passende DrinkPane erstellt
     @Override
-    protected void updateItem(Drinks drink, boolean empty) {
+    protected void updateItem(IDrinks drink, boolean empty) {
         super.updateItem(drink, empty);
         if (empty || drink == null) {
             // Zeigt nichts an, wenn die Zelle leer ist
@@ -41,7 +41,7 @@ public class DrinkListCell extends ListCell<Drinks> {
     }
 
     // createDrinkPane(): erstellt eine Pane mit einem vorgegebenen Layout
-    private Pane createDrinkPane(Drinks drink) {
+    private Pane createDrinkPane(IDrinks drink) {
         // Haupt-Pane (HBox) für das Drink-Item
         HBox drinkItem = new HBox(10); // 10 ist der Abstand zwischen den Elementen
         drinkItem.setPrefSize(280, 150); // Setzt die bevorzugte Größe

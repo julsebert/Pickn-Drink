@@ -21,17 +21,17 @@ public class ControllerBasket implements Initializable {
 
     // Verknüpfung zu FXML
     @FXML
-    private TableView<Drinks> Orderlist;
+    private TableView<IDrinks> Orderlist;
     @FXML
-    private TableColumn<Drinks, Integer> count;
+    private TableColumn<IDrinks, Integer> count;
     @FXML
-    private TableColumn<Drinks, String> tableViewDrink;
+    private TableColumn<IDrinks, String> tableViewDrink;
     @FXML
-    private TableColumn<Drinks, Void> add;
+    private TableColumn<IDrinks, Void> add;
     @FXML
-    private TableColumn<Drinks, Void> remove;
+    private TableColumn<IDrinks, Void> remove;
     @FXML
-    private TableColumn<Drinks, Double> tableViewPrice;
+    private TableColumn<IDrinks, Double> tableViewPrice;
     @FXML
     private Label labelPrice;
 
@@ -62,14 +62,14 @@ public class ControllerBasket implements Initializable {
 
         // Spalte 'count'
         count.setCellValueFactory(cellData -> {
-            Drinks drink = cellData.getValue();
+            IDrinks drink = cellData.getValue();
             int drinkCount = OrderManager.getInstance().getCount(drink);
             return new SimpleObjectProperty<>(drinkCount);
         });
 
         // Spalte 'price'
         tableViewPrice.setCellValueFactory(cellData -> {
-            Drinks drink = cellData.getValue();
+            IDrinks drink = cellData.getValue();
             double drinkPrice = OrderManager.getInstance().getPriceForIdenticalDrinks(drink);
             return new SimpleObjectProperty<>(drinkPrice);
         });
@@ -80,10 +80,10 @@ public class ControllerBasket implements Initializable {
         remove.setCellFactory(col -> new removeButton());
 
         // die Inhalte der Bestellung werden in einer Collection zwischengespeichert
-        Collection<Drinks> orderedDrinks = OrderManager.getInstance().getOrderItems();
+        Collection<IDrinks> orderedDrinks = OrderManager.getInstance().getOrderItems();
 
         // Collection wird auf Object Drinks überprüft
-        for (Drinks drink : orderedDrinks) {
+        for (IDrinks drink : orderedDrinks) {
             if (!isDrinkInTableView(drink)) {
                 Orderlist.getItems().add(drink);
                 logger.info(drink.getName() + " has been added to the basket.");
@@ -96,9 +96,9 @@ public class ControllerBasket implements Initializable {
 
 
     // Methode um dafür zu sorgen, dass Getränk nicht doppelt angezeigt wird. Die Anzahl wird in count angegeben.
-    private boolean isDrinkInTableView(Drinks drink) {
-        ObservableList<Drinks> items = Orderlist.getItems();
-        for (Drinks item : items) {
+    private boolean isDrinkInTableView(IDrinks drink) {
+        ObservableList<IDrinks> items = Orderlist.getItems();
+        for (IDrinks item : items) {
             if (item.equals(drink)) {
                 return true;
             }
@@ -110,7 +110,7 @@ public class ControllerBasket implements Initializable {
     private void updateOrderList(){
         Orderlist.refresh();
 
-        List<Drinks> drinksToRemove = Orderlist.getItems()
+        List<IDrinks> drinksToRemove = Orderlist.getItems()
                 .stream()
                 .filter(drink -> OrderManager.getInstance().getCount(drink) == 0)
                 .toList();
@@ -123,7 +123,7 @@ public class ControllerBasket implements Initializable {
     // Berechnung Gesamtpreis
     private String calculateTotalPrice() {
         double totalPrice = 0.0;
-        for (Drinks drink : Orderlist.getItems()) {
+        for (IDrinks drink : Orderlist.getItems()) {
             double drinkPrice = OrderManager.getInstance().getPriceForIdenticalDrinks(drink);
             totalPrice += drinkPrice;
         }
@@ -139,11 +139,11 @@ public class ControllerBasket implements Initializable {
 
     // Innere Klassen
     // addButton um weitere Getränke der Bestellung hinzuzufügen
-    private class addButton extends TableCell<Drinks, Void> {
+    private class addButton extends TableCell<IDrinks, Void> {
         addButton() {
                 Button addButton = new Button("+");
                 addButton.setOnAction(event -> {
-                    Drinks drink = getTableView().getItems().get(getIndex());
+                    IDrinks drink = getTableView().getItems().get(getIndex());
                     OrderManager.getInstance().addDrink(drink);
                     updateOrderList();
                     updateTotalPrice();
@@ -163,11 +163,11 @@ public class ControllerBasket implements Initializable {
     }
 
     // removeButton um Getränke der Bestellung zu entfernen
-    private class removeButton extends TableCell<Drinks, Void> {
+    private class removeButton extends TableCell<IDrinks, Void> {
         removeButton() {
                 Button removeButton = new Button("-");
                 removeButton.setOnAction(event -> {
-                    Drinks drink = getTableView().getItems().get(getIndex());
+                    IDrinks drink = getTableView().getItems().get(getIndex());
                     OrderManager.getInstance().removeDrink(drink);
                     updateOrderList();
                     updateTotalPrice();

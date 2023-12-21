@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 
 public class DrinkFactory {
@@ -12,15 +13,10 @@ public class DrinkFactory {
     // Logger
     private static final Logger logger = LogManager.getLogger(DrinkFactory.class);
 
-    private static final Map<String, Drinks> drinks = new HashMap<>();
+    private static final Map<String, IDrinks> drinks = new HashMap<>();
     // HashMaps speichern key/value Paare in einer ArrayList
     // Hier: key -> Name des Getränks Typ String, value -> drinks-Objekt mit allen Daten
 
-    // Konstruktor
-    public DrinkFactory(){
-        initDrinks();
-        logger.info("You created the DrinksList");
-    }
 
     // Methoden
 
@@ -55,12 +51,12 @@ public class DrinkFactory {
     }
 
     // Methode dient dazu die Inhalte der HashMap auszugeben
-    public static Collection<Drinks> getAllDrinks () {
-        return drinks.values();
+    public static Collection<IDrinks> getAllDrinks () {
+        return new LinkedList<>(drinks.values());
     }
 
     // Methode wird hier nicht genutzt, dient aber der Erweiterbarkeit der DrinkFactory
-    public static Drinks createDrink(String name){
+    public static IDrinks createDrink(String name){
         try{
             if (name == null || !drinks.containsKey(name)){
                 throw new NullPointerException("The specified drink is not on the menu.");
