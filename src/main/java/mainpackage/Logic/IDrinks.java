@@ -1,5 +1,7 @@
-package mainpackage;
+package mainpackage.Logic;
 
+
+import mainpackage.Logic.Category;
 
 public interface IDrinks {
     String getName();

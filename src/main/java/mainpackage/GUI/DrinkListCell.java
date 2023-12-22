@@ -1,4 +1,4 @@
-package mainpackage;
+package mainpackage.GUI;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -13,6 +13,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import mainpackage.Logic.IDrinks;
+import mainpackage.Logic.OrderManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

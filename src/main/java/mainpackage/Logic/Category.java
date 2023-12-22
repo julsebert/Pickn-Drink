@@ -1,4 +1,4 @@
-package mainpackage;
+package mainpackage.Logic;
 
 public enum Category {
 

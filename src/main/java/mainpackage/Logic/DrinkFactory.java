@@ -1,4 +1,4 @@
-package mainpackage;
+package mainpackage.Logic;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -61,6 +61,7 @@ public class DrinkFactory {
             if (name == null || !drinks.containsKey(name)){
                 throw new NullPointerException("The specified drink is not on the menu.");
             }
+            logger.info(drinks.get(name) + "has been created");
             return drinks.get(name);
         }
         catch (NullPointerException e){

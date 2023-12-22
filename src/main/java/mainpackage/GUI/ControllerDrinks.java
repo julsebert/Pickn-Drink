@@ -1,4 +1,4 @@
-package mainpackage;
+package mainpackage.GUI;
 
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -6,6 +6,10 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
+import mainpackage.Logic.DrinkFactory;
+import mainpackage.Logic.IDrinks;
+import mainpackage.Logic.Category;
+import mainpackage.Logic.SceneSwitcher;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

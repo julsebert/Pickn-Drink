@@ -1,9 +1,9 @@
-package mainpackage;
+package mainpackage.Logic;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Drinks implements IDrinks{
+public class Drinks implements IDrinks {
 
     // Logger
     private static final Logger logger = LogManager.getLogger(Drinks.class);
@@ -29,26 +29,27 @@ public class Drinks implements IDrinks{
     // Implementierung der Methoden aus dem IDrinks-Interface
     @Override
     public String getName() {
+        logger.info("GetName was executed.");
         return name;
     }
-
     @Override
     public String getDescription() {
+        logger.info("GetDescription was executed.");
         return description;
     }
-
     @Override
     public Category getCategory() {
+        logger.info("GetCategory was executed.");
         return category;
     }
-
     @Override
     public double getPrice() {
+        logger.info("GetPrice was executed.");
         return price;
     }
-
     @Override
     public String getImagePath() {
+        logger.info("GetImagePath was executed.");
         return path;
     }
 }

@@ -4,4 +4,6 @@ module SE2StartupProject {
     requires org.apache.logging.log4j;
 
     opens mainpackage;
+    opens mainpackage.Logic;
+    opens mainpackage.GUI;
 }

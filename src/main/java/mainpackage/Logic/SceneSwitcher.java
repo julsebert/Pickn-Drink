@@ -1,4 +1,4 @@
-package mainpackage;
+package mainpackage.Logic;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -35,11 +35,14 @@ public class SceneSwitcher {
     public static SceneSwitcher getInstance(){
         if (instance == null){
             instance = new SceneSwitcher();
+            logger.info("Instance has been created.");
         }
+        logger.info("Instance already exists.");
         return instance;
     }
 
     public void setPrimaryStage(Stage primarayStage) {
+        logger.info("Get primaryStage.");
         this.primaryStage = primarayStage;
     }
 
@@ -56,6 +59,7 @@ public class SceneSwitcher {
             primaryStage.show();
             logger.info("Switching to the new scene.");
         } catch (IOException e) {
+            logger.error("Scene path not found: " + scenePath, e);
             throw new RuntimeException("Scene path not found: " + scenePath, e);
         }
     }

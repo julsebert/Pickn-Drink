@@ -1,4 +1,4 @@
-package mainpackage;
+package mainpackage.Logic;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,21 +26,27 @@ public class OrderManager {
     public static OrderManager getInstance(){
         if (instance == null){
             instance = new OrderManager();
+            logger.info("Instance has been created.");
         }
+        logger.info("Instance already exists.");
         return instance;
     }
 
     // Methoden
     public void addDrink(IDrinks drink) {
+        logger.info("AddDrink was executed.");
         orderItems.add(drink);
     }
     public void removeDrink(IDrinks drink) {
+        logger.info("RemoveDrink was executed.");
         orderItems.remove(drink);
     }
     public List<IDrinks> getOrderItems() {
+        logger.info("GetOrderItems was executed.");
         return new LinkedList<>(orderItems);
     }
     public void clearOrder() {
+        logger.info("ClearOrder was executed.");
         orderItems.clear();
     }
 
@@ -50,6 +56,7 @@ public class OrderManager {
         for (IDrinks item : orderItems) {
             if (item.equals(drink)) {
                 count++;
+                logger.info("New count: "+ count);
             }
         }
         logger.info("The " + drink.getName() + " was counted " + count + " times.");

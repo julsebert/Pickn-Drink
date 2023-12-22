@@ -1,4 +1,4 @@
-package mainpackage;
+package mainpackage.GUI;
 
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.ObservableList;
@@ -6,6 +6,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import mainpackage.Logic.IDrinks;
+import mainpackage.Logic.OrderManager;
+import mainpackage.Logic.SceneSwitcher;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -91,6 +94,7 @@ public class ControllerBasket implements Initializable {
         }
 
         // Gesamtpreis aller Getränke aus der Bestellung wird berechnet
+        logger.info("Set new text for label.");
         labelPrice.setText(calculateTotalPrice());
     }
 
@@ -100,9 +104,11 @@ public class ControllerBasket implements Initializable {
         ObservableList<IDrinks> items = Orderlist.getItems();
         for (IDrinks item : items) {
             if (item.equals(drink)) {
+                logger.info("Item equals drink");
                 return true;
             }
         }
+        logger.info("Item doesn't equal drink");
         return false;
     }
 
@@ -157,6 +163,7 @@ public class ControllerBasket implements Initializable {
         protected void updateItem(Void item, boolean empty) {
             super.updateItem(item, empty);
             if (empty || getTableRow() == null || getTableRow().getItem() == null) {
+                logger.info("The Item is null");
                 setGraphic(null);
             }
         }
@@ -181,6 +188,7 @@ public class ControllerBasket implements Initializable {
         protected void updateItem(Void item, boolean empty) {
             super.updateItem(item, empty);
             if (empty || getTableRow() == null || getTableRow().getItem() == null) {
+                logger.info("The Item is null");
                 setGraphic(null);
             }
         }

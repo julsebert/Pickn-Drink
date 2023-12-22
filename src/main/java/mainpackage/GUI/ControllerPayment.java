@@ -1,18 +1,16 @@
-package mainpackage;
+package mainpackage.GUI;
 
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import mainpackage.Logic.SceneSwitcher;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class ControllerPayment implements Initializable {
 
@@ -54,6 +52,7 @@ public class ControllerPayment implements Initializable {
 
         // ProgressBar wird auf 75 % gesetzt
         timer.setProgress(0.75);
+        logger.info("PaymentScene has been initialized");
     }
 
     // Methode, um eine zufällige 5-stellige Ganzzahl zu generieren
@@ -61,6 +60,7 @@ public class ControllerPayment implements Initializable {
         Random random = new Random();
         int min = 10000;
         int max = 99999;
+        logger.info("Random Number has been created.");
         return random.nextInt(max - min + 1) + min;
     }
 
@@ -68,5 +68,6 @@ public class ControllerPayment implements Initializable {
     public void setRandomNumber() {
         int randomNumber = generateRandomNumber();
         randomID.setText("#" + String.format("%05d", randomNumber));
+        logger.info("Random Number for the Order-ID");
     }
 }
