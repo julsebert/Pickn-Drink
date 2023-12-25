@@ -8,20 +8,22 @@
 
 <VBox alignment="TOP_CENTER" prefHeight="680.0" prefWidth="400.0" spacing="5" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.GUI.ControllerPayment">
 
-    <HBox alignment="CENTER" minHeight="120.0" prefHeight="120.0" prefWidth="200.0">
-        <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                <Image url="@Logo.png" />
+    <HBox alignment="CENTER" minHeight="250.0" prefHeight="120.0" prefWidth="200.0">
+        <Region prefHeight="500" />
+        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@LogoGelb.png" />
         </ImageView>
 
+
     </HBox>
-   <HBox alignment="TOP_CENTER" minHeight="500.0" prefHeight="100.0" prefWidth="200.0">
+   <HBox alignment="TOP_CENTER" minHeight="350.0" prefHeight="100.0" prefWidth="200.0">
          <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
-               <Label fx:id="randomID" text="#12650">
+               <Label fx:id="randomID" layoutX="20.0" text="#12650">
                   <font>
                      <Font size="30.0" />
                   </font>
                   <VBox.margin>
-                     <Insets top="150.0" />
+                     <Insets top="50.0" />
                   </VBox.margin>
                </Label>
                <Label text="Your order will be ready for pickup soon.">
@@ -34,8 +36,32 @@
    </HBox>
 
     <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0">
-            <Button fx:id="menuButton1" mnemonicParsing="false" onAction="#logout" prefHeight="50.0" prefWidth="133.0" text="Logout" />
-            <Button fx:id="menuButton2" mnemonicParsing="false" onAction="#changeToDrinks" prefHeight="50.0" prefWidth="133.0" text="Drinks" />
-            <Button fx:id="menuButton3" mnemonicParsing="false" onAction="#changeToBasket" prefHeight="50.0" prefWidth="133.0" text="Basket" />
+        <Button fx:id="menuButton1" mnemonicParsing="false" onAction="#logout" prefHeight="50.0" prefWidth="133.0">
+            <graphic>
+                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@insta.logo.schwarz.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="menuButton2" mnemonicParsing="false" onAction="#changeToDrinks" prefHeight="50.0" prefWidth="133.0" text="Drinks">
+            <graphic>
+                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@insta.logo.schwarz.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="menuButton3" mnemonicParsing="false" onAction="#changeToBasket" prefHeight="50.0" prefWidth="133.0" text="Basket">
+            <graphic>
+                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@insta.logo.schwarz.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
     </HBox>
 </VBox>

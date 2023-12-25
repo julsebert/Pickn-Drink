@@ -2,7 +2,7 @@
     -fx-background-color: #BDBCFC;
 }
 
-#backgroundLogin{
+#backgroundLogin, #backgroundRegister {
     -fx-background-color: #FFF379;
 }
 
@@ -41,5 +41,25 @@
 }
 
 
+.tab {
+    -fx-background-color: #6A68D1;
+}
 
+.tab .tab-label {
+    -fx-text-fill: #D1D0FD;
+}
+
+
+.table-cell .button {
+    -fx-background-color: #FFF379;
+}
+
+
+.table-view {
+    -fx-background-color: #BDBCFC;
+}
+
+.progress-bar {
+    -fx-accent: #6A68D1;
+}
 

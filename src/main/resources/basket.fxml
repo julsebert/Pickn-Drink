@@ -10,7 +10,7 @@
    <HBox alignment="CENTER" minHeight="120.0" prefHeight="120.0" prefWidth="200.0">
          <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
             <image>
-               <Image url="@Logo.png" />
+               <Image url="@LogoGelb.png" />
             </image>
          </ImageView>
       <VBox.margin>
@@ -57,8 +57,32 @@
       </HBox>
     <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0">
         <children>
-            <Button fx:id="menuButton1" mnemonicParsing="false" onAction="#logout" prefHeight="50.0" prefWidth="133.0" text="Logout" />
-            <Button fx:id="menuButton2" mnemonicParsing="false" onAction="#changeToDrinks" prefHeight="50.0" prefWidth="133.0" text="Drinks" />
-            <Button fx:id="menuButton3" mnemonicParsing="false" prefHeight="50.0" prefWidth="133.0" text="Basket" />
+            <Button fx:id="menuButton1" mnemonicParsing="false" prefHeight="50.0" prefWidth="133.0" onAction="#logout">
+                <graphic>
+                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@insta.logo.schwarz.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="menuButton2" mnemonicParsing="false" prefHeight="50.0" prefWidth="133.0" onAction="#changeToDrinks" text="Drinks" >
+                <graphic>
+                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@insta.logo.schwarz.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="menuButton3" mnemonicParsing="false" prefHeight="50.0" prefWidth="133.0"  text="Basket" >
+                <graphic>
+                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@insta.logo.schwarz.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
         </children></HBox>
 </VBox>
