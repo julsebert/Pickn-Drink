@@ -16,10 +16,10 @@
    </ImageView>
 
             <Label prefWidth="220" text="Email" />
-            <TextField maxWidth="220" />
+            <TextField maxWidth="220" fx:id="tfEmailLogin" />
 
             <Label prefWidth="220" text="Passwort" />
-            <PasswordField maxWidth="220" />
+            <PasswordField maxWidth="220" fx:id="tfPasswdLogin"/>
 
             <Region prefHeight="10" />
             <Button minHeight="40" minWidth="120" onAction="#changeToDrinks" text="LOGIN" />
