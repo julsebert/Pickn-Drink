@@ -40,14 +40,17 @@
     -fx-alignment: center-left;
 }
 
-
 .tab {
-    -fx-background-color: #6A68D1;
+    -fx-background-color: #BDBCFC;
 }
 
 .tab .tab-label {
-    -fx-text-fill: #D1D0FD;
+    -fx-text-fill: #6A68D1;
 }
+
+
+
+
 
 
 .table-cell .button {

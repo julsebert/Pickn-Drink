@@ -9,9 +9,7 @@
 <VBox alignment="TOP_CENTER" prefHeight="680.0" prefWidth="400.0" spacing="5" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.GUI.ControllerBasket">
    <HBox alignment="CENTER" minHeight="120.0" prefHeight="120.0" prefWidth="200.0">
          <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@LogoGelb.png" />
-            </image>
+             <Image url="@LogoGelb.png" />
          </ImageView>
       <VBox.margin>
          <Insets />
@@ -37,7 +35,6 @@
    </HBox>
       <HBox alignment="CENTER">
       <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
-         <children>
             <Label fx:id="labelPrice" text="Label">
                <font>
                   <Font size="30.0" />
@@ -48,7 +45,6 @@
             </Label>
       
                   <Button fx:id="Bezahlen" minHeight="40" minWidth="120" mnemonicParsing="false" onAction="#changeToPayment" text="BEZAHLEN" />
-         </children>
       </VBox>
 
          <VBox.margin>
@@ -56,33 +52,26 @@
          </VBox.margin>
       </HBox>
     <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0">
-        <children>
-            <Button fx:id="menuButton1" mnemonicParsing="false" prefHeight="50.0" prefWidth="133.0" onAction="#logout">
+            <Button fx:id="menuButton1" mnemonicParsing="false" prefHeight="50.0" prefWidth="133.0" onAction="#logout" >
                 <graphic>
-                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                            <Image url="@insta.logo.schwarz.png" />
-                        </image>
+                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@IconLogout.png" />
                     </ImageView>
                 </graphic>
             </Button>
-            <Button fx:id="menuButton2" mnemonicParsing="false" prefHeight="50.0" prefWidth="133.0" onAction="#changeToDrinks" text="Drinks" >
+            <Button fx:id="menuButton2" mnemonicParsing="false" prefHeight="50.0" prefWidth="133.0" onAction="#changeToDrinks" >
                 <graphic>
                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                            <Image url="@insta.logo.schwarz.png" />
-                        </image>
+                        <Image url="@IconGetränke.png" />
                     </ImageView>
                 </graphic>
             </Button>
-            <Button fx:id="menuButton3" mnemonicParsing="false" prefHeight="50.0" prefWidth="133.0"  text="Basket" >
+            <Button fx:id="menuButton3" mnemonicParsing="false" prefHeight="50.0" prefWidth="133.0"  >
                 <graphic>
-                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                            <Image url="@insta.logo.schwarz.png" />
-                        </image>
+                    <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@IconWarenkorb.png" />
                     </ImageView>
                 </graphic>
             </Button>
-        </children></HBox>
+       </HBox>
 </VBox>

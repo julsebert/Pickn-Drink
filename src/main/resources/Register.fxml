@@ -8,11 +8,8 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.geometry.Insets?>
 <VBox fx:id="backgroundRegister" alignment="CENTER" maxHeight="680.0" maxWidth="400.0" prefHeight="680.0" prefWidth="400.0" spacing="5" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.GUI.ControllerRegister">
-   <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-         <image>
             <Image url="@LogoGelb.png" />
-         </image>
          <VBox.margin>
             <Insets bottom="30.0" />
          </VBox.margin>
@@ -34,5 +31,4 @@
       <Region prefHeight="10" />
       <Label prefHeight="26.0" prefWidth="115.0" text="ALREADY SIGNED IN?" />
       <Button mnemonicParsing="false" onAction="#changeToLogin" text="SIGN IN" />
-   </children>
 </VBox>
