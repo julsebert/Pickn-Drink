@@ -17,6 +17,15 @@ import java.io.IOException;
 
 import java.nio.Buffer;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.TextField;
+
+
 public class ControllerRegister {
 
     // Logger
@@ -35,14 +44,30 @@ public class ControllerRegister {
         String vEmail = tfEmail.getText();
         String vPasswd = tfPasswd.getText();
         String vPasswd2 = tfPasswd2.getText();
-        if (vPasswd.equals(vPasswd2)) {
+        if (isValidEmail(vEmail)&&vPasswd.equals(vPasswd2)) {
             // Write to CSV file
             writeDataToCSV("user.csv", vEmail, vPasswd);
         } else {
-            System.out.println("Passwort stimmt nicht überein");
+           // System.out.println("Passwort stimmt nicht überein");
+           showAlert("Email falsch, oder Passwort stimmt nicht überein");
         }
 
 
+    }
+
+    private void showAlert(String message) {
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle("Fehler");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    private boolean isValidEmail(String email) {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        Pattern pattern = Pattern.compile(emailRegex);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
     }
 
 

@@ -12,6 +12,8 @@ import com.opencsv.CSVWriter;
 
 import java.io.FileReader;
 import java.io.IOException;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 
 public class
@@ -51,6 +53,13 @@ ControllerLogin {
             System.out.println("Email oder Kennwort sind falsch.");
         }
     }
+   /* private void showAlert(String message) {
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle("Fehler");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }*/
 
     private void readDataFromCSV(String filename) {
         try (CSVReader reader = new CSVReader(new FileReader(filename))) {
