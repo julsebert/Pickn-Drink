@@ -2,8 +2,7 @@ package mainpackage.GUI;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import mainpackage.Logic.SceneSwitcher;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,9 +15,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 
-
-import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -35,30 +35,30 @@ public class ControllerRegister {
     private TextField tfPasswd;
     @FXML
     private TextField tfPasswd2;
+    @FXML
+    private DatePicker dpBirthdate;
+    @FXML
+    private Label lbWarningMessageRegister;
 
     @FXML
     public void btRegister(ActionEvent event) {
         String vEmail = tfEmail.getText();
         String vPasswd = tfPasswd.getText();
         String vPasswd2 = tfPasswd2.getText();
-        if (isValidEmail(vEmail)&&vPasswd.equals(vPasswd2)) {
+        LocalDate vBirthdate = dpBirthdate.getValue();
+
+        if (isValidBirthdate(vBirthdate) && isValidEmail(vEmail) && vPasswd.equals(vPasswd2)) {
             // Write to CSV file
+            logger.info("User zu CSV datei zugefügt");
             writeDataToCSV("user.csv", vEmail, vPasswd);
         } else {
-           // System.out.println("Passwort stimmt nicht überein");
-           showAlert("Email falsch, oder Passwort stimmt nicht überein");
+           logger.info("falsche Eingabe bei Registrierung");
+           displayWarning("Email falsch, \nPasswort falsch \noder Alter unzulässig");
         }
 
 
     }
 
-    private void showAlert(String message) {
-        Alert alert = new Alert(AlertType.ERROR);
-        alert.setTitle("Fehler");
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
 
     private boolean isValidEmail(String email) {
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
@@ -77,11 +77,29 @@ public class ControllerRegister {
             // Write the record to the CSV file
             writer.writeNext(record);
 
-            System.out.println("Data written to CSV successfully.");
+            logger.info("Data written to CSV successfully.");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+
+    private boolean isValidBirthdate(LocalDate vBirthdate) {
+        if (vBirthdate == null) {
+            return false; // No birthdate provided
+        }
+
+        LocalDate currentDate = LocalDate.now();
+        Period age = Period.between(vBirthdate, currentDate);
+
+        // Check if the age is at least 18 years
+        return age.getYears() >= 18;
+    }
+
+    private void displayWarning(String message){
+        lbWarningMessageRegister.setText(message);
+    }
+
 
 
     @FXML

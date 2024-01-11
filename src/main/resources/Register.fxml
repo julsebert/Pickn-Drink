@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.geometry.Insets?>
 <VBox fx:id="backgroundRegister" alignment="CENTER" maxHeight="680.0" maxWidth="400.0" prefHeight="680.0" prefWidth="400.0" spacing="5" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpackage.GUI.ControllerRegister">
       <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@LogoGelb.png" />
@@ -19,13 +17,14 @@
             <Font size="27.0" />
          </font></Label>-->
       <Label prefWidth="220.0" text="E-MAIL" />
-      <TextField maxWidth="220.0" fx:id="tfEmail"/>
+      <TextField fx:id="tfEmail" maxWidth="220.0" />
       <Label prefWidth="220.0" text="BIRTHDATE" />
-      <TextField maxWidth="220.0" prefHeight="25.0" prefWidth="279.0" />
-      <Label prefWidth="220.0" text="PASSWORD"/>
-      <TextField maxWidth="220.0" prefHeight="25.0" prefWidth="276.0" fx:id="tfPasswd" />
+   <DatePicker fx:id="dpBirthdate" maxWidth="220.0" />
+      <Label prefWidth="220.0" text="PASSWORD" />
+      <TextField fx:id="tfPasswd" maxWidth="220.0" prefHeight="25.0" prefWidth="276.0" />
       <Label prefWidth="220.0" text="REPEAT PASSWORD" />
-      <TextField maxWidth="220.0" fx:id="tfPasswd2" />
+      <TextField fx:id="tfPasswd2" maxWidth="220.0" />
+   <Label fx:id="lbWarningMessageRegister" alignment="CENTER" maxWidth="220.0" prefHeight="64.0" prefWidth="296.0" textAlignment="CENTER" />
       <Region prefHeight="10" />
       <Button mnemonicParsing="false" onAction="#btRegister" prefHeight="36.0" prefWidth="80.0" text="REGISTER" />
       <Region prefHeight="10" />

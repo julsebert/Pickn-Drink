@@ -8,13 +8,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.opencsv.CSVReader;
-import com.opencsv.CSVWriter;
+
 
 import java.io.FileReader;
 import java.io.IOException;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 
+import javafx.scene.control.Label;
 
 public class
 ControllerLogin {
@@ -28,6 +27,9 @@ ControllerLogin {
 
     @FXML
     private TextField tfPasswdLogin;
+
+    @FXML
+    private Label lbWarningLabel;
 
     private String vEmailLogin;
     private String vPasswdLogin;
@@ -46,20 +48,21 @@ ControllerLogin {
 
         if(vLoginCheckPW == true && vLoginCheckMail == true) {
             SceneSwitcher.getInstance().switchScene(SceneSwitcher.DRINKS, "Drinks");
-            logger.info("Welcome to Drinks.");
+            logger.info("Welcome to Drinks. Erfolgreicher login");
         }
         else
         {
-            System.out.println("Email oder Kennwort sind falsch.");
+
+            displayWarning("Ungültige E-Mail-Adresse \n oder Passwort stimmt nicht überein");
+            logger.info("login fehlgeschlagen");
         }
     }
-   /* private void showAlert(String message) {
-        Alert alert = new Alert(AlertType.ERROR);
-        alert.setTitle("Fehler");
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }*/
+
+
+    private void displayWarning(String message) {
+        // Display the warning message in the Label
+        lbWarningLabel.setText(message);
+    }
 
     private void readDataFromCSV(String filename) {
         try (CSVReader reader = new CSVReader(new FileReader(filename))) {
@@ -73,24 +76,24 @@ ControllerLogin {
                     if(vSpalte == 1 && field.equals(vEmailLogin))
                     {
                         //ok
-                        System.out.println("Mail OK");
+                        logger.info("Mail OK");
                         vLoginCheckMail = true;
                     }
                     else if (vSpalte == 1)
                     {
-                        System.out.println("Login Email existiert nicht");
+                       logger.info("Login Email existiert nicht");
 
                     }
 
                     if (vSpalte == 2 &&  field.equals(vPasswdLogin))
                     {
                         //ok
-                        System.out.println("PW OK");
+                        logger.info("PW OK");
                         vLoginCheckPW = true;
                     }
                     else if(vSpalte == 2)
                     {
-                        System.out.println("Kennwort ist falsch");
+                        logger.info("Kennwort ist falsch");
                     }
                     System.out.print(field + " ");
                     vSpalte ++;
@@ -106,6 +109,6 @@ ControllerLogin {
     @FXML
     public void changeToRegister(){
         SceneSwitcher.getInstance().switchScene(SceneSwitcher.REGISTER, "Register");
-        logger.info("Now you can sign in.");
+        logger.info("zu Register gewechselt");
     }
 }

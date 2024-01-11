@@ -14,14 +14,15 @@
    </ImageView>
 
             <Label prefWidth="220" text="Email" />
-            <TextField maxWidth="220" fx:id="tfEmailLogin" />
+            <TextField fx:id="tfEmailLogin" maxWidth="220" />
 
             <Label prefWidth="220" text="Passwort" />
-            <PasswordField maxWidth="220" fx:id="tfPasswdLogin"/>
+            <PasswordField fx:id="tfPasswdLogin" maxWidth="220" />
+   <Label fx:id="lbWarningLabel" maxWidth="220.0" prefHeight="75.0" prefWidth="220.0" textAlignment="CENTER" />
 
             <Region prefHeight="10" />
             <Button minHeight="40" minWidth="120" onAction="#changeToDrinks" text="LOGIN" />
-            <Region prefHeight="80" />
+            <Region prefHeight="37.0" prefWidth="400.0" />
             <Label text="NOT SIGNED IN YET?" />
             <Button onAction="#changeToRegister" text="REGISTER" />
 </VBox>
