@@ -1,5 +1,5 @@
 package mainpackage.GUI;
-import com.opencsv.exceptions.CsvValidationException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -7,23 +7,20 @@ import javafx.scene.control.TextField;
 import mainpackage.Logic.SceneSwitcher;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import com.opencsv.CSVReader;
-import com.opencsv.CSVWriter;
-import org.apache.logging.log4j.message.Message;
 
-import java.io.FileReader;
+import com.opencsv.CSVWriter;
+
+
+
 import java.io.FileWriter;
 import java.io.IOException;
 
-import java.nio.Buffer;
+
 
 import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextField;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class ControllerRegister {
