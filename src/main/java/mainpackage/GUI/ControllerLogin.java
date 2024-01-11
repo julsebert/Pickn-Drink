@@ -53,7 +53,7 @@ ControllerLogin {
         else
         {
 
-            displayWarning("Ungültige E-Mail-Adresse \n oder Passwort stimmt nicht überein");
+            displayWarning("invalid e-mail\nor password");
             logger.info("login fehlgeschlagen");
         }
     }
@@ -62,6 +62,7 @@ ControllerLogin {
     private void displayWarning(String message) {
         // Display the warning message in the Label
         lbWarningLabel.setText(message);
+        lbWarningLabel.setStyle("-fx-text-fill: #ff0000;" );
     }
 
     private void readDataFromCSV(String filename) {

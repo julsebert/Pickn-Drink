@@ -51,9 +51,11 @@ public class ControllerRegister {
             // Write to CSV file
             logger.info("User zu CSV datei zugefügt");
             writeDataToCSV("user.csv", vEmail, vPasswd);
+            lbWarningMessageRegister.setText("registration successful");
+            lbWarningMessageRegister.setStyle("-fx-text-fill: #6A68D1;");
         } else {
            logger.info("falsche Eingabe bei Registrierung");
-           displayWarning("Email falsch, \nPasswort falsch \noder Alter unzulässig");
+           displayWarning("wrong e-mail, \nwrong password \nor illegal age");
         }
 
 
@@ -98,6 +100,7 @@ public class ControllerRegister {
 
     private void displayWarning(String message){
         lbWarningMessageRegister.setText(message);
+        lbWarningMessageRegister.setStyle("-fx-text-fill: #ff0000;" );
     }
 
 

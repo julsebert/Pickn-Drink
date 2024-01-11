@@ -13,12 +13,12 @@
       </VBox.margin>
    </ImageView>
 
-            <Label prefWidth="220" text="Email" />
+            <Label prefWidth="220" text="EMAIL" />
             <TextField fx:id="tfEmailLogin" maxWidth="220" />
 
-            <Label prefWidth="220" text="Passwort" />
+            <Label prefWidth="220" text="PASSWORD" />
             <PasswordField fx:id="tfPasswdLogin" maxWidth="220" />
-   <Label fx:id="lbWarningLabel" maxWidth="220.0" prefHeight="75.0" prefWidth="220.0" textAlignment="CENTER" />
+   <Label fx:id="lbWarningLabel" alignment="CENTER" maxWidth="220.0" prefHeight="75.0" prefWidth="220.0" textAlignment="CENTER" />
 
             <Region prefHeight="10" />
             <Button minHeight="40" minWidth="120" onAction="#changeToDrinks" text="LOGIN" />
