@@ -19,15 +19,15 @@
             <Font size="27.0" />
          </font></Label>-->
       <Label prefWidth="220.0" text="E-MAIL" />
-      <TextField maxWidth="220.0" />
+      <TextField maxWidth="220.0" fx:id="tfEmail"/>
       <Label prefWidth="220.0" text="BIRTHDATE" />
       <TextField maxWidth="220.0" prefHeight="25.0" prefWidth="279.0" />
-      <Label prefWidth="220.0" text="PASSWORD" />
-      <TextField maxWidth="220.0" prefHeight="25.0" prefWidth="276.0" />
+      <Label prefWidth="220.0" text="PASSWORD"/>
+      <TextField maxWidth="220.0" prefHeight="25.0" prefWidth="276.0" fx:id="tfPasswd" />
       <Label prefWidth="220.0" text="REPEAT PASSWORD" />
-      <TextField maxWidth="220.0" />
+      <TextField maxWidth="220.0" fx:id="tfPasswd2" />
       <Region prefHeight="10" />
-      <Button mnemonicParsing="false" onAction="#changeToLogin" prefHeight="36.0" prefWidth="80.0" text="REGISTER" />
+      <Button mnemonicParsing="false" onAction="#btRegister" prefHeight="36.0" prefWidth="80.0" text="REGISTER" />
       <Region prefHeight="10" />
       <Label prefHeight="26.0" prefWidth="115.0" text="ALREADY SIGNED IN?" />
       <Button mnemonicParsing="false" onAction="#changeToLogin" text="SIGN IN" />
