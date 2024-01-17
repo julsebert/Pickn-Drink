@@ -54,11 +54,9 @@ public class ControllerRegister {
             lbWarningMessageRegister.setText("registration successful");
             lbWarningMessageRegister.setStyle("-fx-text-fill: #6A68D1;");
         } else {
-           logger.info("falsche Eingabe bei Registrierung");
+           logger.warn("falsche Eingabe bei Registrierung");
            displayWarning("wrong e-mail, \nwrong password \nor illegal age");
         }
-
-
     }
 
 
