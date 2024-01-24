@@ -15,8 +15,7 @@ import java.io.IOException;
 
 import javafx.scene.control.Label;
 
-public class
-ControllerLogin {
+public class ControllerLogin {
 
     // Logger
     private static final Logger logger = LogManager.getLogger(ControllerLogin.class);
@@ -59,6 +58,7 @@ ControllerLogin {
     }
 
 
+    //Methode doppelt sich mit COntroller Register, könnte ausgelagert werden
     private void displayWarning(String message) {
         // Display the warning message in the Label
         lbWarningLabel.setText(message);

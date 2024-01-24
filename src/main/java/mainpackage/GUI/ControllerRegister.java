@@ -96,6 +96,7 @@ public class ControllerRegister {
         return age.getYears() >= 18;
     }
 
+    //Methode doppelt sich mit Controller Login, könnte ausgelagert werden
     private void displayWarning(String message){
         lbWarningMessageRegister.setText(message);
         lbWarningMessageRegister.setStyle("-fx-text-fill: #ff0000;" );
