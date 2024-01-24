@@ -55,13 +55,12 @@ public class DrinkFactory {
         return new LinkedList<>(drinks.values());
     }
 
-    // Methode wird hier nicht genutzt, dient aber der Erweiterbarkeit der DrinkFactory
+    // Methode wird hier nicht genutzt, dient aber der Erweiterbarkeit der DrinkFactory -> wie Exception gefangen wird hinschreiben
     public static IDrinks getDrink(String name){
             if (name == null || !drinks.containsKey(name)){
                 throw new DrinkNotFound(name);
             }
             logger.info(drinks.get(name) + "has been created");
             return drinks.get(name);
-        // Exception einfügen, falls es das Getränk nicht gibt --> vielleicht hier eigene Exception erstellen
     }
 }

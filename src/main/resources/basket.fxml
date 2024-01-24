@@ -44,7 +44,7 @@
                </VBox.margin>
             </Label>
       
-                  <Button fx:id="Bezahlen" minHeight="40" minWidth="120" mnemonicParsing="false" onAction="#changeToPayment" text="BEZAHLEN" />
+                  <Button fx:id="Bezahlen" minHeight="40" minWidth="120" mnemonicParsing="false" onAction="#changeToPayment" text="ORDER" />
       </VBox>
 
          <VBox.margin>
