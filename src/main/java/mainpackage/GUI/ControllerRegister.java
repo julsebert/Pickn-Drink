@@ -64,6 +64,7 @@ public class ControllerRegister {
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
         Pattern pattern = Pattern.compile(emailRegex);
         Matcher matcher = pattern.matcher(email);
+        logger.info("We are checking if the email is valid.");
         return matcher.matches();
     }
 
@@ -90,6 +91,7 @@ public class ControllerRegister {
         LocalDate currentDate = LocalDate.now();
         Period age = Period.between(vBirthdate, currentDate);
 
+        logger.info("We are checking if you are over 18 years old.");
         // Check if the age is at least 18 years
         return age.getYears() >= 18;
     }
