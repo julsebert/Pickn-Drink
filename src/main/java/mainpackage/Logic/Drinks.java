@@ -18,15 +18,7 @@ public class Drinks implements IDrinks {
     // Konstruktor der Klasse Drinks
     public Drinks(String name, String description, double price, Category category, String path) {
 
-        if (name == null || name.isEmpty()) {
-            throw new IllegalArgumentException("Name cannot be null or empty.");
-        }
-        if (price < 0) {
-            throw new IllegalArgumentException("Price cannot be negative.");
-        }
-        if (category == null) {
-            throw new NullPointerException("Category cannot be null.");
-        }
+        if (price < 0) throw new IllegalArgumentException("Price cannot be negative.");
 
         this.name = name;
         this.description = description;

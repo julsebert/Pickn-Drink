@@ -20,7 +20,7 @@ public class ControllerLogin {
     // Logger
     private static final Logger logger = LogManager.getLogger(ControllerLogin.class);
 
-
+    // Verknüpfung zu FXML
     @FXML
     private TextField tfEmailLogin;
 
@@ -35,9 +35,10 @@ public class ControllerLogin {
 
     private boolean vLoginCheckMail;
     private boolean vLoginCheckPW;
+
     // SceneSwitcher
     @FXML
-    public void changeToDrinks(){
+    private void changeToDrinks(){
         // Read from CSV file
         vLoginCheckMail = false;
         vLoginCheckPW = false;
@@ -45,26 +46,34 @@ public class ControllerLogin {
         vPasswdLogin = tfPasswdLogin.getText();
         readDataFromCSV("user.csv");
 
-        if(vLoginCheckPW == true && vLoginCheckMail == true) {
+        if(vLoginCheckPW && vLoginCheckMail) {
             SceneSwitcher.getInstance().switchScene(SceneSwitcher.DRINKS, "Drinks");
-            logger.info("Welcome to Drinks. Erfolgreicher login");
+            logger.info("Welcome to Drinks. Successful login.");
         }
         else
         {
-
             displayWarning("invalid e-mail\nor password");
-            logger.info("login fehlgeschlagen");
+            logger.info("Login failed.");
         }
     }
 
+    @FXML
+    private void changeToRegister(){
+        SceneSwitcher.getInstance().switchScene(SceneSwitcher.REGISTER, "Register");
+        logger.info("Changed to register.");
+    }
 
-    //Methode doppelt sich mit COntroller Register, könnte ausgelagert werden
+    // Methoden
+
+    //Methode doppelt sich mit Controller Register, könnte ausgelagert werden -> wie mit Ihnen besprochen ist es hier so in Ordnung.
     private void displayWarning(String message) {
         // Display the warning message in the Label
         lbWarningLabel.setText(message);
         lbWarningLabel.setStyle("-fx-text-fill: #ff0000;" );
+        logger.info("Warning label has been set.");
     }
 
+    // Methode liest die File aus
     private void readDataFromCSV(String filename) {
         try (CSVReader reader = new CSVReader(new FileReader(filename))) {
             // Read all records from the CSV file
@@ -77,12 +86,12 @@ public class ControllerLogin {
                     if(vSpalte == 1 && field.equals(vEmailLogin))
                     {
                         //ok
-                        logger.info("Mail OK");
+                        logger.info("Mail OK.");
                         vLoginCheckMail = true;
                     }
                     else if (vSpalte == 1)
                     {
-                       logger.info("Login Email existiert nicht");
+                       logger.info("Login Email does not excits.");
 
                     }
 
@@ -94,7 +103,7 @@ public class ControllerLogin {
                     }
                     else if(vSpalte == 2)
                     {
-                        logger.info("Kennwort ist falsch");
+                        logger.info("Password is incorrect.");
                     }
                     System.out.print(field + " ");
                     vSpalte ++;
@@ -103,13 +112,7 @@ public class ControllerLogin {
                 System.out.println(); // Move to the next line for the next record
             }
         } catch (IOException | CsvValidationException e) {
-            e.printStackTrace();
+            logger.error("Exception occured: " + e);
         }
-    }
-
-    @FXML
-    public void changeToRegister(){
-        SceneSwitcher.getInstance().switchScene(SceneSwitcher.REGISTER, "Register");
-        logger.info("zu Register gewechselt");
     }
 }

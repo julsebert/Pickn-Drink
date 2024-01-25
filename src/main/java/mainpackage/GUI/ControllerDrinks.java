@@ -99,13 +99,13 @@ public class ControllerDrinks implements Initializable{
 
     // SceneSwitcher
     @FXML
-    public void changeToBasket(){
+    private void changeToBasket(){
         SceneSwitcher.getInstance().switchScene(SceneSwitcher.BASKET, "Basket");
         logger.info("Welcome to Basket");
     }
 
     @FXML
-    public void logout(){
+    private void logout(){
         SceneSwitcher.getInstance().switchScene(SceneSwitcher.LOGIN, "Login");
         logger.info("You're logged out, welcome to login");
     }

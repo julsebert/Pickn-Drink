@@ -1,6 +1,6 @@
 package mainpackage.GUI;
 
-import javafx.event.ActionEvent;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import mainpackage.Logic.SceneSwitcher;
@@ -15,7 +15,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 
-import javafx.scene.control.Alert.AlertType;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -27,8 +26,8 @@ public class ControllerRegister {
 
     // Logger
     private static final Logger logger = LogManager.getLogger(ControllerRegister.class);
-    @FXML
-    private Button btRegister; //initialisierung der ids
+
+    // Verknüpfung zu FXML
     @FXML
     private TextField tfEmail;
     @FXML
@@ -40,8 +39,9 @@ public class ControllerRegister {
     @FXML
     private Label lbWarningMessageRegister;
 
+    // Methoden
     @FXML
-    public void btRegister(ActionEvent event) {
+    private void btRegister() {
         String vEmail = tfEmail.getText();
         String vPasswd = tfPasswd.getText();
         String vPasswd2 = tfPasswd2.getText();
@@ -49,12 +49,12 @@ public class ControllerRegister {
 
         if (isValidBirthdate(vBirthdate) && isValidEmail(vEmail) && vPasswd.equals(vPasswd2)) {
             // Write to CSV file
-            logger.info("User zu CSV datei zugefügt");
+            logger.info("User added to CSV.");
             writeDataToCSV("user.csv", vEmail, vPasswd);
             lbWarningMessageRegister.setText("registration successful");
             lbWarningMessageRegister.setStyle("-fx-text-fill: #6A68D1;");
         } else {
-           logger.warn("falsche Eingabe bei Registrierung");
+           logger.warn("Wrong input in register.");
            displayWarning("wrong e-mail, \nwrong password \nor illegal age");
         }
     }
@@ -67,8 +67,6 @@ public class ControllerRegister {
         return matcher.matches();
     }
 
-
-
     private void writeDataToCSV(String filename, String var1, String var2) {
         try (CSVWriter writer = new CSVWriter(new FileWriter(filename))) {
             // Create a String array for a single CSV record
@@ -79,7 +77,7 @@ public class ControllerRegister {
 
             logger.info("Data written to CSV successfully.");
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Exception occured: " + e);
         }
     }
 
@@ -96,16 +94,16 @@ public class ControllerRegister {
         return age.getYears() >= 18;
     }
 
-    //Methode doppelt sich mit Controller Login, könnte ausgelagert werden
+    //Methode doppelt sich mit Controller Login, könnte ausgelagert werden. -> wie mit Ihnen besprochen ist es hier so in Ordnung.
     private void displayWarning(String message){
         lbWarningMessageRegister.setText(message);
         lbWarningMessageRegister.setStyle("-fx-text-fill: #ff0000;" );
+        logger.info("Warning message in register has been set.");
     }
 
-
-
+    // SceneSwitcher
     @FXML
-    public void changeToLogin (){
+    private void changeToLogin (){
         SceneSwitcher.getInstance().switchScene(SceneSwitcher.LOGIN, "Login");
         logger.info("Welcome to Login.");
     }

@@ -22,7 +22,7 @@ public class Driver extends Application{
         try {
             launch(args);
         }catch(Exception e){
-            logger.error("Something happened :/", e);
+            logger.error("An error occurred while running the application. Please contact support for assistance.", e);
         }
     }
 

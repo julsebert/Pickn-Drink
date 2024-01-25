@@ -40,7 +40,7 @@ public class ControllerBasket implements Initializable {
 
     // SceneSwitcher
     @FXML
-    public void changeToPayment () {
+    private void changeToPayment () {
         OrderManager.getInstance().clearOrder();
         // nach dem Bezahlen wird der Warenkorb auf 0 gesetzt
         SceneSwitcher.getInstance().switchScene(SceneSwitcher.PAYMENT, "Payment");
@@ -48,13 +48,13 @@ public class ControllerBasket implements Initializable {
     }
 
     @FXML
-    public void changeToDrinks() {
+    private void changeToDrinks() {
         SceneSwitcher.getInstance().switchScene(SceneSwitcher.DRINKS, "Drinks");
         logger.info("Welcome to Drinks");
     }
 
     @FXML
-    public void logout() {
+    private void logout() {
         SceneSwitcher.getInstance().switchScene(SceneSwitcher.LOGIN, "Login");
         logger.info("You're logged out, welcome to Login");
     }

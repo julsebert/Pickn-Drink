@@ -25,19 +25,19 @@ public class ControllerPayment implements Initializable {
 
     // SceneSwitcher
     @FXML
-    public void logout(){
+    private void logout(){
         SceneSwitcher.getInstance().switchScene(SceneSwitcher.LOGIN, "Login");
         logger.info("You're logged out, welcome to Login");
     }
 
     @FXML
-    public void changeToDrinks(){
+    private void changeToDrinks(){
         SceneSwitcher.getInstance().switchScene(SceneSwitcher.DRINKS, "Drinks");
         logger.info("Welcome to Drinks");
     }
 
     @FXML
-    public void changeToBasket(){
+    private void changeToBasket(){
         SceneSwitcher.getInstance().switchScene(SceneSwitcher.BASKET, "Basket");
         logger.info("Welcome to the basket.");
     }
@@ -65,7 +65,7 @@ public class ControllerPayment implements Initializable {
     }
 
     // Setzen der zufälligen Zahl im Label
-    public void setRandomNumber() {
+    private void setRandomNumber() {
         int randomNumber = generateRandomNumber();
         randomID.setText("#" + String.format("%05d", randomNumber));
         logger.info("Random Number for the Order-ID");
